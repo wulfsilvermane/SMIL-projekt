@@ -8,5 +8,8 @@ namespace Prototype
 {
     class Ansat
     {
+        private int id;
+        private string fornavn;
+        private string efternavn;
     }
 }

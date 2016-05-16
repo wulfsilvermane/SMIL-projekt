@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prototype
 {
-    class Redskab
+    class Udstyr
     {
     }
 }

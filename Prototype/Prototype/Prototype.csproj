@@ -58,7 +58,7 @@
     <Compile Include="Patient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Redskab.cs" />
+    <Compile Include="Udstyr.cs" />
     <Compile Include="Reservation.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
