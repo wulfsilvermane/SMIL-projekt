@@ -17,34 +17,14 @@ namespace Prototype
             InitializeComponent();
         }
 
-        private void btnSøg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PatientInfo_Load(object sender, EventArgs e)
         {
+            // Event executes når formen er helt loadet
+        }
 
+        private void btnSøg_Click(object sender, EventArgs e)
+        {
+            // event executes når søg-knappen klikkes
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
