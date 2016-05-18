@@ -32,47 +32,62 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEfternavn = new System.Windows.Forms.TextBox();
+            this.txtAdresse = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtPostnummer = new System.Windows.Forms.TextBox();
+            this.txtBy = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBemærkninger = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txtPatientId = new System.Windows.Forms.TextBox();
+            this.txtMobil = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtFornavn = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.btnSøg = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGemPatient = new System.Windows.Forms.Button();
+            this.chkÆndreOplysninger = new System.Windows.Forms.CheckBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTelefon = new System.Windows.Forms.TextBox();
+            this.txtCprNummer = new System.Windows.Forms.TextBox();
+            this.lblCprNr = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Location = new System.Drawing.Point(184, 16);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(72, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(118, 15);
+            this.label1.Location = new System.Drawing.Point(22, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(159, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Søg på CPR";
+            this.label1.Text = "Indtast patientens CPR-nummer:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 29);
+            this.textBox2.Location = new System.Drawing.Point(118, 231);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 2;
@@ -80,198 +95,339 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 32);
+            this.label2.Location = new System.Drawing.Point(10, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Fornavn";
+            this.label2.Text = "Fornavn:";
             // 
-            // textBox3
+            // txtEfternavn
             // 
-            this.textBox3.Location = new System.Drawing.Point(173, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.txtEfternavn.Location = new System.Drawing.Point(242, 19);
+            this.txtEfternavn.Name = "txtEfternavn";
+            this.txtEfternavn.ReadOnly = true;
+            this.txtEfternavn.Size = new System.Drawing.Size(100, 20);
+            this.txtEfternavn.TabIndex = 4;
             // 
-            // textBox4
+            // txtAdresse
             // 
-            this.textBox4.Location = new System.Drawing.Point(3, 55);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(270, 20);
-            this.textBox4.TabIndex = 5;
+            this.txtAdresse.Location = new System.Drawing.Point(87, 45);
+            this.txtAdresse.Name = "txtAdresse";
+            this.txtAdresse.ReadOnly = true;
+            this.txtAdresse.Size = new System.Drawing.Size(255, 20);
+            this.txtAdresse.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(279, 32);
+            this.label3.Location = new System.Drawing.Point(183, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Efternavn";
+            this.label3.Text = "Efternavn:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(279, 58);
+            this.label4.Location = new System.Drawing.Point(10, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Addresse";
+            this.label4.Text = "Adresse:";
             // 
-            // textBox5
+            // txtPostnummer
             // 
-            this.textBox5.Location = new System.Drawing.Point(3, 81);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 8;
+            this.txtPostnummer.Location = new System.Drawing.Point(87, 71);
+            this.txtPostnummer.Name = "txtPostnummer";
+            this.txtPostnummer.ReadOnly = true;
+            this.txtPostnummer.Size = new System.Drawing.Size(86, 20);
+            this.txtPostnummer.TabIndex = 8;
+            this.txtPostnummer.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox6
+            // txtBy
             // 
-            this.textBox6.Location = new System.Drawing.Point(173, 81);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 9;
+            this.txtBy.Location = new System.Drawing.Point(242, 71);
+            this.txtBy.Name = "txtBy";
+            this.txtBy.ReadOnly = true;
+            this.txtBy.Size = new System.Drawing.Size(100, 20);
+            this.txtBy.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(109, 84);
+            this.label5.Location = new System.Drawing.Point(10, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Post Nr";
+            this.label5.Text = "Postnummer:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(279, 84);
+            this.label6.Location = new System.Drawing.Point(179, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 13);
+            this.label6.Size = new System.Drawing.Size(22, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "By";
+            this.label6.Text = "By:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 210);
+            this.label7.Location = new System.Drawing.Point(8, 155);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Noter";
+            this.label7.Text = "Bemærkninger:";
             // 
-            // textBox7
+            // txtBemærkninger
             // 
-            this.textBox7.Location = new System.Drawing.Point(12, 226);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(270, 133);
-            this.textBox7.TabIndex = 14;
+            this.txtBemærkninger.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBemærkninger.Location = new System.Drawing.Point(11, 171);
+            this.txtBemærkninger.Multiline = true;
+            this.txtBemærkninger.Name = "txtBemærkninger";
+            this.txtBemærkninger.ReadOnly = true;
+            this.txtBemærkninger.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBemærkninger.Size = new System.Drawing.Size(331, 216);
+            this.txtBemærkninger.TabIndex = 14;
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(330, 226);
+            this.listBox1.Location = new System.Drawing.Point(6, 6);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(185, 134);
+            this.listBox1.ScrollAlwaysVisible = true;
+            this.listBox1.Size = new System.Drawing.Size(417, 381);
             this.listBox1.TabIndex = 15;
             // 
-            // label8
+            // txtPatientId
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(327, 210);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Reservationer";
+            this.txtPatientId.Location = new System.Drawing.Point(242, 123);
+            this.txtPatientId.Name = "txtPatientId";
+            this.txtPatientId.ReadOnly = true;
+            this.txtPatientId.Size = new System.Drawing.Size(100, 20);
+            this.txtPatientId.TabIndex = 17;
+            this.txtPatientId.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
-            // textBox8
+            // txtMobil
             // 
-            this.textBox8.Location = new System.Drawing.Point(3, 107);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 17;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(173, 107);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(109, 110);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(22, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Tlf.";
+            this.txtMobil.Location = new System.Drawing.Point(87, 97);
+            this.txtMobil.Name = "txtMobil";
+            this.txtMobil.ReadOnly = true;
+            this.txtMobil.Size = new System.Drawing.Size(86, 20);
+            this.txtMobil.TabIndex = 18;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(279, 110);
+            this.label10.Location = new System.Drawing.Point(10, 100);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
+            this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Mobil";
+            this.label10.Text = "Mobil:";
             // 
-            // textBox10
+            // txtFornavn
             // 
-            this.textBox10.Location = new System.Drawing.Point(3, 3);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 21;
+            this.txtFornavn.Location = new System.Drawing.Point(65, 19);
+            this.txtFornavn.Name = "txtFornavn";
+            this.txtFornavn.ReadOnly = true;
+            this.txtFornavn.Size = new System.Drawing.Size(114, 20);
+            this.txtFornavn.TabIndex = 21;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(109, 6);
+            this.label11.Location = new System.Drawing.Point(179, 126);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.Size = new System.Drawing.Size(57, 13);
             this.label11.TabIndex = 22;
-            this.label11.Text = "Patient ID";
+            this.label11.Text = "Patient ID:";
             // 
-            // panel1
+            // btnSøg
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox10);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(12, 76);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 131);
-            this.panel1.TabIndex = 23;
+            this.btnSøg.Location = new System.Drawing.Point(265, 14);
+            this.btnSøg.Name = "btnSøg";
+            this.btnSøg.Size = new System.Drawing.Size(89, 23);
+            this.btnSøg.TabIndex = 24;
+            this.btnSøg.Text = "Find patient";
+            this.btnSøg.UseVisualStyleBackColor = true;
+            this.btnSøg.Click += new System.EventHandler(this.btnSøg_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.tabControl1);
+            this.groupBox1.Location = new System.Drawing.Point(382, 48);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(449, 449);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Reservationer";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.txtTelefon);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.chkÆndreOplysninger);
+            this.groupBox2.Controls.Add(this.btnGemPatient);
+            this.groupBox2.Controls.Add(this.txtFornavn);
+            this.groupBox2.Controls.Add(this.lblCprNr);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtBemærkninger);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txtBy);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtPostnummer);
+            this.groupBox2.Controls.Add(this.txtEfternavn);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtCprNummer);
+            this.groupBox2.Controls.Add(this.txtPatientId);
+            this.groupBox2.Controls.Add(this.txtAdresse);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtMobil);
+            this.groupBox2.Location = new System.Drawing.Point(12, 48);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(353, 449);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Patientoplysninger";
+            // 
+            // btnGemPatient
+            // 
+            this.btnGemPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGemPatient.Location = new System.Drawing.Point(207, 406);
+            this.btnGemPatient.Name = "btnGemPatient";
+            this.btnGemPatient.Size = new System.Drawing.Size(135, 32);
+            this.btnGemPatient.TabIndex = 23;
+            this.btnGemPatient.Text = "Gem patientoplysninger";
+            this.btnGemPatient.UseVisualStyleBackColor = true;
+            // 
+            // chkÆndreOplysninger
+            // 
+            this.chkÆndreOplysninger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkÆndreOplysninger.AutoSize = true;
+            this.chkÆndreOplysninger.Location = new System.Drawing.Point(14, 415);
+            this.chkÆndreOplysninger.Name = "chkÆndreOplysninger";
+            this.chkÆndreOplysninger.Size = new System.Drawing.Size(145, 17);
+            this.chkÆndreOplysninger.TabIndex = 24;
+            this.chkÆndreOplysninger.Text = "Ændre patientoplysninger";
+            this.chkÆndreOplysninger.UseVisualStyleBackColor = true;
+            this.chkÆndreOplysninger.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(6, 17);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(437, 426);
+            this.tabControl1.TabIndex = 16;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(429, 400);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Kommende behandlinger";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(429, 400);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Afsluttede behandlinger";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // listBox2
+            // 
+            this.listBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(6, 6);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.ScrollAlwaysVisible = true;
+            this.listBox2.Size = new System.Drawing.Size(417, 381);
+            this.listBox2.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(179, 100);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Telefon:";
+            // 
+            // txtTelefon
+            // 
+            this.txtTelefon.Location = new System.Drawing.Point(242, 97);
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.ReadOnly = true;
+            this.txtTelefon.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefon.TabIndex = 26;
+            // 
+            // txtCprNummer
+            // 
+            this.txtCprNummer.Location = new System.Drawing.Point(87, 123);
+            this.txtCprNummer.Name = "txtCprNummer";
+            this.txtCprNummer.ReadOnly = true;
+            this.txtCprNummer.Size = new System.Drawing.Size(86, 20);
+            this.txtCprNummer.TabIndex = 17;
+            this.txtCprNummer.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
+            // lblCprNr
+            // 
+            this.lblCprNr.AutoSize = true;
+            this.lblCprNr.Location = new System.Drawing.Point(10, 126);
+            this.lblCprNr.Name = "lblCprNr";
+            this.lblCprNr.Size = new System.Drawing.Size(72, 13);
+            this.lblCprNr.TabIndex = 22;
+            this.lblCprNr.Text = "CPR-nummer:";
             // 
             // PatientInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 729);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(840, 507);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnSøg);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "PatientInfo";
             this.Text = "PatientInfo";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.PatientInfo_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,24 +439,34 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEfternavn;
+        private System.Windows.Forms.TextBox txtAdresse;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPostnummer;
+        private System.Windows.Forms.TextBox txtBy;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBemærkninger;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtPatientId;
+        private System.Windows.Forms.TextBox txtMobil;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtFornavn;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSøg;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnGemPatient;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox chkÆndreOplysninger;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.TextBox txtTelefon;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCprNr;
+        private System.Windows.Forms.TextBox txtCprNummer;
     }
 }

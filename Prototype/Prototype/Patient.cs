@@ -20,7 +20,7 @@ namespace Prototype
         public string email;
         public string noter;
         
-        public Patient Patient(int id, string cpr, string fornavn, string efternavn, string addresse,
+        public Patient(int id, string cpr, string fornavn, string efternavn, string addresse,
             string bynavn, int post, string tlf, string mobil, string email, string noter)
         {
             this.id = id;
