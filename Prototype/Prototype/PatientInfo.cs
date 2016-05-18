@@ -25,7 +25,7 @@ namespace Prototype
 
         private void btnSøg_Click(object sender, EventArgs e)
         {
-            // event executes når søg-knappen klikkes
+            // event executes når søg-knappen klikkes. CPR-boksen skal forbindes med søgefunktionen.
             patient = new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "2103932103", 315609, "Drastisk brug for ny krone!");
 
             txtFornavn.Text = patient.fornavn;
@@ -42,16 +42,16 @@ namespace Prototype
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            txtFornavn.ReadOnly = !chkÆndreOplysninger.Checked;
-            txtEfternavn.ReadOnly = !chkÆndreOplysninger.Checked;
-            txtAdresse.ReadOnly = !chkÆndreOplysninger.Checked;
-            txtPostnummer.ReadOnly = !chkÆndreOplysninger.Checked;
-            txtBy.ReadOnly = !chkÆndreOplysninger.Checked;
-            txtMobil.ReadOnly = !chkÆndreOplysninger.Checked;
-            txtTelefon.ReadOnly = !chkÆndreOplysninger.Checked;
-            // txtPatientId.ReadOnly = !chkÆndreOplysninger.Checked;
-            txtBemærkninger.ReadOnly = !chkÆndreOplysninger.Checked;
-            // txtCprNummer.ReadOnly = !chkÆndreOplysninger.Checked;
+            txtFornavn.ReadOnly =! chkÆndreOplysninger.Checked;
+            txtEfternavn.ReadOnly =! chkÆndreOplysninger.Checked;
+            txtAdresse.ReadOnly =! chkÆndreOplysninger.Checked;
+            txtPostnummer.ReadOnly =! chkÆndreOplysninger.Checked;
+            txtBy.ReadOnly =! chkÆndreOplysninger.Checked;
+            txtMobil.ReadOnly =! chkÆndreOplysninger.Checked;
+            txtTelefon.ReadOnly =! chkÆndreOplysninger.Checked;
+            // txtPatientId.ReadOnly =! chkÆndreOplysninger.Checked;
+            txtBemærkninger.ReadOnly =! chkÆndreOplysninger.Checked;
+            // txtCprNummer.ReadOnly =! chkÆndreOplysninger.Checked;
 
             btnGemPatient.Enabled = chkÆndreOplysninger.Checked;
         }
