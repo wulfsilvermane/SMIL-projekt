@@ -8,32 +8,31 @@ namespace Prototype
 {
     class Patient
     {
-        public int id;
-        public string cpr;
         public string fornavn;
         public string efternavn;
-        public string addresse;
-        public string bynavn;
-        public int post;
-        public string tlf;
+        public string adresse;
+        public int postnummer;
+        public string by;
         public string mobil;
-        public string email;
-        public string noter;
+        public string telefon;
+        public string cprnummer;
+        // public string email; Tilføj til winform.
+        public int patientid;
+        public string bemærkninger;
         
-        public Patient(int id, string cpr, string fornavn, string efternavn, string addresse,
-            string bynavn, int post, string tlf, string mobil, string email, string noter)
+        public Patient(string fornavn, string efternavn, string adresse, int postnummer, string by, string mobil, string telefon, string cprnummer, int patientid,  /*string email*/ string bemærkninger)
         {
-            this.id = id;
-            this.cpr = cpr;
             this.fornavn = fornavn;
             this.efternavn = efternavn;
-            this.addresse = addresse;
-            this.bynavn = bynavn;
-            this.post = post;
-            this.tlf = tlf;
+            this.adresse = adresse;
+            this.postnummer = postnummer;
+            this.by = by;
             this.mobil = mobil;
-            this.email = email;
-            this.noter = noter;
+            this.telefon = telefon;
+            //this.email = email;
+            this.cprnummer = cprnummer;
+            this.patientid = patientid;
+            this.bemærkninger = bemærkninger;
         }
     }
 }
