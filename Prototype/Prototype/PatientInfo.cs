@@ -187,11 +187,24 @@ namespace Prototype
             if (opretNyPatient == true)
             {
                 OpretPatient(patient);
+
+                // hvis success
+                MessageBox.Show(
+                    "Den nye patient er nu gemt i systemet.",
+                    "Ny Patient Gemt",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 chkÆndreOplysninger.Enabled = true;
             }
             else
             {
                 OpdaterPatient(patient);
+
+                // hvis success
+                MessageBox.Show(
+                    "Patientoplysningerne er nu gemt i systemet.",
+                    "Patientoplysninger Opdateret",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
