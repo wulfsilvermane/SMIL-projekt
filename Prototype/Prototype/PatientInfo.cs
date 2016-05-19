@@ -103,7 +103,6 @@ namespace Prototype
             // Tjek om CPR nummeret findes
             nyPatient = !FindesCpr(cpr);
 
-            // Tjek om CPR nummeret findes i databasen
             if (nyPatient)
             {
                 DialogResult result = MessageBox.Show(
