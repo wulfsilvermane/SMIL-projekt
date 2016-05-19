@@ -20,6 +20,7 @@ namespace Prototype
         public int patientid;
         public string bemærkninger;
         
+        
         public Patient(string fornavn, string efternavn, string adresse, int postnummer, string by, string mobil, string telefon, string cprnummer, int patientid,  /*string email*/ string bemærkninger)
         {
             this.fornavn = fornavn;
@@ -34,5 +35,19 @@ namespace Prototype
             this.patientid = patientid;
             this.bemærkninger = bemærkninger;
         }
+        public Patient(int pid, string cpr, string fnavn, string enavn, string adr, int post, string telefon, string mobil)
+        {
+            patientid = pid;
+            cprnummer = cpr;
+            fornavn = fnavn;
+            efternavn = enavn;
+            adresse = adr;
+            postnummer = post;
+            this.telefon = telefon;
+            this.mobil = mobil;
+            bemærkninger = "tom";
+            by = "test";
+        }
+        public Patient() { }
     }
 }

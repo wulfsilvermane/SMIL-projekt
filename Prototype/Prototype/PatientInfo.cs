@@ -26,7 +26,7 @@ namespace Prototype
         private void btnSøg_Click(object sender, EventArgs e)
         {
             // event executes når søg-knappen klikkes. CPR-boksen skal forbindes med søgefunktionen.
-            patient = new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "2103932103", 315609, "Drastisk brug for ny krone!");
+            patient = SQLkommandoer.FindPatient(textBox1.Text); //new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "2103932103", 315609, "Drastisk brug for ny krone!");
 
             txtFornavn.Text = patient.fornavn;
             txtEfternavn.Text = patient.efternavn;

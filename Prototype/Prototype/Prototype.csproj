@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLkommandoer.cs" />
     <Compile Include="Udstyr.cs" />
     <Compile Include="Reservation.cs" />
     <EmbeddedResource Include="Form1.resx">
