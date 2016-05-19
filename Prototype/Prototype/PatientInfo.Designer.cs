@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSøgefelt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,10 +57,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.chkÆndreOplysninger = new System.Windows.Forms.CheckBox();
             this.btnGemPatient = new System.Windows.Forms.Button();
             this.lblCprNr = new System.Windows.Forms.Label();
             this.txtCprNummer = new System.Windows.Forms.TextBox();
+            this.chkÆndreOplysninger = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -68,12 +68,12 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtSøgefelt
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtSøgefelt.Location = new System.Drawing.Point(184, 16);
+            this.txtSøgefelt.Name = "txtSøgefelt";
+            this.txtSøgefelt.Size = new System.Drawing.Size(72, 20);
+            this.txtSøgefelt.TabIndex = 0;
             // 
             // label1
             // 
@@ -106,7 +106,7 @@
             this.txtEfternavn.Name = "txtEfternavn";
             this.txtEfternavn.ReadOnly = true;
             this.txtEfternavn.Size = new System.Drawing.Size(100, 20);
-            this.txtEfternavn.TabIndex = 4;
+            this.txtEfternavn.TabIndex = 3;
             // 
             // txtAdresse
             // 
@@ -114,7 +114,7 @@
             this.txtAdresse.Name = "txtAdresse";
             this.txtAdresse.ReadOnly = true;
             this.txtAdresse.Size = new System.Drawing.Size(255, 20);
-            this.txtAdresse.TabIndex = 5;
+            this.txtAdresse.TabIndex = 4;
             // 
             // label3
             // 
@@ -140,7 +140,7 @@
             this.txtPostnummer.Name = "txtPostnummer";
             this.txtPostnummer.ReadOnly = true;
             this.txtPostnummer.Size = new System.Drawing.Size(86, 20);
-            this.txtPostnummer.TabIndex = 8;
+            this.txtPostnummer.TabIndex = 5;
             // 
             // txtBy
             // 
@@ -148,7 +148,7 @@
             this.txtBy.Name = "txtBy";
             this.txtBy.ReadOnly = true;
             this.txtBy.Size = new System.Drawing.Size(100, 20);
-            this.txtBy.TabIndex = 9;
+            this.txtBy.TabIndex = 6;
             // 
             // label5
             // 
@@ -188,7 +188,7 @@
             this.txtBemærkninger.ReadOnly = true;
             this.txtBemærkninger.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBemærkninger.Size = new System.Drawing.Size(331, 216);
-            this.txtBemærkninger.TabIndex = 14;
+            this.txtBemærkninger.TabIndex = 11;
             // 
             // listBox1
             // 
@@ -208,7 +208,7 @@
             this.txtPatientId.Name = "txtPatientId";
             this.txtPatientId.ReadOnly = true;
             this.txtPatientId.Size = new System.Drawing.Size(100, 20);
-            this.txtPatientId.TabIndex = 17;
+            this.txtPatientId.TabIndex = 10;
             // 
             // txtMobil
             // 
@@ -216,7 +216,7 @@
             this.txtMobil.Name = "txtMobil";
             this.txtMobil.ReadOnly = true;
             this.txtMobil.Size = new System.Drawing.Size(86, 20);
-            this.txtMobil.TabIndex = 18;
+            this.txtMobil.TabIndex = 7;
             // 
             // label10
             // 
@@ -233,7 +233,7 @@
             this.txtFornavn.Name = "txtFornavn";
             this.txtFornavn.ReadOnly = true;
             this.txtFornavn.Size = new System.Drawing.Size(114, 20);
-            this.txtFornavn.TabIndex = 21;
+            this.txtFornavn.TabIndex = 2;
             // 
             // label11
             // 
@@ -249,7 +249,7 @@
             this.btnSøg.Location = new System.Drawing.Point(265, 14);
             this.btnSøg.Name = "btnSøg";
             this.btnSøg.Size = new System.Drawing.Size(89, 23);
-            this.btnSøg.TabIndex = 24;
+            this.btnSøg.TabIndex = 1;
             this.btnSøg.Text = "Find patient";
             this.btnSøg.UseVisualStyleBackColor = true;
             this.btnSøg.Click += new System.EventHandler(this.btnSøg_Click);
@@ -278,7 +278,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(437, 426);
-            this.tabControl1.TabIndex = 16;
+            this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
             // 
@@ -354,7 +354,7 @@
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.ReadOnly = true;
             this.txtTelefon.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefon.TabIndex = 26;
+            this.txtTelefon.TabIndex = 8;
             // 
             // label8
             // 
@@ -365,27 +365,17 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Telefon:";
             // 
-            // chkÆndreOplysninger
-            // 
-            this.chkÆndreOplysninger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chkÆndreOplysninger.AutoSize = true;
-            this.chkÆndreOplysninger.Location = new System.Drawing.Point(14, 415);
-            this.chkÆndreOplysninger.Name = "chkÆndreOplysninger";
-            this.chkÆndreOplysninger.Size = new System.Drawing.Size(145, 17);
-            this.chkÆndreOplysninger.TabIndex = 24;
-            this.chkÆndreOplysninger.Text = "Ændre patientoplysninger";
-            this.chkÆndreOplysninger.UseVisualStyleBackColor = true;
-            this.chkÆndreOplysninger.CheckedChanged += new System.EventHandler(this.chkÆndreOplysninger_CheckedChanged);
-            // 
             // btnGemPatient
             // 
             this.btnGemPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGemPatient.Enabled = false;
             this.btnGemPatient.Location = new System.Drawing.Point(207, 406);
             this.btnGemPatient.Name = "btnGemPatient";
             this.btnGemPatient.Size = new System.Drawing.Size(135, 32);
-            this.btnGemPatient.TabIndex = 23;
+            this.btnGemPatient.TabIndex = 13;
             this.btnGemPatient.Text = "Gem patientoplysninger";
             this.btnGemPatient.UseVisualStyleBackColor = true;
+            this.btnGemPatient.Click += new System.EventHandler(this.btnGemPatient_Click);
             // 
             // lblCprNr
             // 
@@ -402,7 +392,20 @@
             this.txtCprNummer.Name = "txtCprNummer";
             this.txtCprNummer.ReadOnly = true;
             this.txtCprNummer.Size = new System.Drawing.Size(86, 20);
-            this.txtCprNummer.TabIndex = 17;
+            this.txtCprNummer.TabIndex = 9;
+            // 
+            // chkÆndreOplysninger
+            // 
+            this.chkÆndreOplysninger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkÆndreOplysninger.AutoSize = true;
+            this.chkÆndreOplysninger.Enabled = false;
+            this.chkÆndreOplysninger.Location = new System.Drawing.Point(14, 415);
+            this.chkÆndreOplysninger.Name = "chkÆndreOplysninger";
+            this.chkÆndreOplysninger.Size = new System.Drawing.Size(145, 17);
+            this.chkÆndreOplysninger.TabIndex = 12;
+            this.chkÆndreOplysninger.Text = "Ændre patientoplysninger";
+            this.chkÆndreOplysninger.UseVisualStyleBackColor = true;
+            this.chkÆndreOplysninger.CheckedChanged += new System.EventHandler(this.chkÆndreOplysninger_CheckedChanged);
             // 
             // PatientInfo
             // 
@@ -413,7 +416,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSøg);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSøgefelt);
             this.Name = "PatientInfo";
             this.Text = "PatientInfo";
             this.Load += new System.EventHandler(this.PatientInfo_Load);
@@ -430,7 +433,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSøgefelt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
@@ -457,11 +460,11 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.CheckBox chkÆndreOplysninger;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.TextBox txtTelefon;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblCprNr;
         private System.Windows.Forms.TextBox txtCprNummer;
+        private System.Windows.Forms.CheckBox chkÆndreOplysninger;
     }
 }

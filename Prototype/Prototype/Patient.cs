@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prototype
 {
-    class Patient
+    public class Patient
     {
         public string fornavn;
         public string efternavn;
