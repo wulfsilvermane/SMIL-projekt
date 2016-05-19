@@ -61,6 +61,8 @@
             this.lblCprNr = new System.Windows.Forms.Label();
             this.txtCprNummer = new System.Windows.Forms.TextBox();
             this.chkÆndreOplysninger = new System.Windows.Forms.CheckBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -171,7 +173,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 155);
+            this.label7.Location = new System.Drawing.Point(8, 181);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 13;
@@ -182,12 +184,12 @@
             this.txtBemærkninger.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBemærkninger.Location = new System.Drawing.Point(11, 171);
+            this.txtBemærkninger.Location = new System.Drawing.Point(11, 197);
             this.txtBemærkninger.Multiline = true;
             this.txtBemærkninger.Name = "txtBemærkninger";
             this.txtBemærkninger.ReadOnly = true;
             this.txtBemærkninger.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBemærkninger.Size = new System.Drawing.Size(331, 222);
+            this.txtBemærkninger.Size = new System.Drawing.Size(331, 196);
             this.txtBemærkninger.TabIndex = 11;
             // 
             // listBox1
@@ -204,7 +206,7 @@
             // 
             // txtPatientId
             // 
-            this.txtPatientId.Location = new System.Drawing.Point(242, 123);
+            this.txtPatientId.Location = new System.Drawing.Point(242, 151);
             this.txtPatientId.Name = "txtPatientId";
             this.txtPatientId.ReadOnly = true;
             this.txtPatientId.Size = new System.Drawing.Size(100, 20);
@@ -229,16 +231,16 @@
             // 
             // txtFornavn
             // 
-            this.txtFornavn.Location = new System.Drawing.Point(65, 19);
+            this.txtFornavn.Location = new System.Drawing.Point(87, 19);
             this.txtFornavn.Name = "txtFornavn";
             this.txtFornavn.ReadOnly = true;
-            this.txtFornavn.Size = new System.Drawing.Size(114, 20);
+            this.txtFornavn.Size = new System.Drawing.Size(92, 20);
             this.txtFornavn.TabIndex = 2;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(179, 126);
+            this.label11.Location = new System.Drawing.Point(179, 154);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 13);
             this.label11.TabIndex = 22;
@@ -332,6 +334,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtBy);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtPostnummer);
             this.groupBox2.Controls.Add(this.txtEfternavn);
@@ -340,6 +343,7 @@
             this.groupBox2.Controls.Add(this.txtPatientId);
             this.groupBox2.Controls.Add(this.txtAdresse);
             this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.txtMobil);
             this.groupBox2.Location = new System.Drawing.Point(12, 48);
             this.groupBox2.Name = "groupBox2";
@@ -380,7 +384,7 @@
             // lblCprNr
             // 
             this.lblCprNr.AutoSize = true;
-            this.lblCprNr.Location = new System.Drawing.Point(10, 126);
+            this.lblCprNr.Location = new System.Drawing.Point(10, 154);
             this.lblCprNr.Name = "lblCprNr";
             this.lblCprNr.Size = new System.Drawing.Size(72, 13);
             this.lblCprNr.TabIndex = 22;
@@ -388,7 +392,7 @@
             // 
             // txtCprNummer
             // 
-            this.txtCprNummer.Location = new System.Drawing.Point(87, 123);
+            this.txtCprNummer.Location = new System.Drawing.Point(87, 151);
             this.txtCprNummer.Name = "txtCprNummer";
             this.txtCprNummer.ReadOnly = true;
             this.txtCprNummer.Size = new System.Drawing.Size(86, 20);
@@ -406,6 +410,23 @@
             this.chkÆndreOplysninger.Text = "Ændre patientoplysninger";
             this.chkÆndreOplysninger.UseVisualStyleBackColor = true;
             this.chkÆndreOplysninger.CheckedChanged += new System.EventHandler(this.chkÆndreOplysninger_CheckedChanged);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(87, 123);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(255, 20);
+            this.txtEmail.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 126);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Email:";
             // 
             // PatientInfo
             // 
@@ -467,5 +488,7 @@
         private System.Windows.Forms.Label lblCprNr;
         private System.Windows.Forms.TextBox txtCprNummer;
         private System.Windows.Forms.CheckBox chkÆndreOplysninger;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

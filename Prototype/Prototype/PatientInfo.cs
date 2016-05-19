@@ -32,7 +32,7 @@ namespace Prototype
 
             // TODO: Indsæt kode her, som kigger op på databasen
             // Hvis den findes, skal der returneres 'true', ellers skal den returnere 'false'
-            findes = false; // PLACEHOLDER
+            findes = true; // PLACEHOLDER
 
             return findes;
         }
@@ -124,7 +124,7 @@ namespace Prototype
             else // Hvis patienten findes, executes følgende kode
             {
                 // PLACEHOLDER OBJEKT - ERSTAT MED DB KODE
-                patient = new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "2103932103", 315609, "Drastisk brug for ny krone!");
+                patient = new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "Hans.Petersen@example.com", "2103932103", 315609, "Drastisk brug for ny krone!");
 
                 txtFornavn.Text = patient.fornavn;
                 txtEfternavn.Text = patient.efternavn;
@@ -133,6 +133,7 @@ namespace Prototype
                 txtBy.Text = patient.by;
                 txtMobil.Text = patient.mobil;
                 txtTelefon.Text = patient.telefon;
+                txtEmail.Text = patient.email;
                 txtPatientId.Text = patient.patientid.ToString();
                 txtBemærkninger.Text = patient.bemærkninger;
                 txtCprNummer.Text = patient.cprnummer;
@@ -154,6 +155,7 @@ namespace Prototype
                 txtBy.ReadOnly = false;
                 txtMobil.ReadOnly = false;
                 txtTelefon.ReadOnly = false;
+                txtEmail.ReadOnly = false;
                 txtBemærkninger.ReadOnly = false;
 
                 // Til sidst indsætter vi CPR nummeret i sin tekstboks
@@ -175,6 +177,7 @@ namespace Prototype
             txtBy.ReadOnly = !chkÆndreOplysninger.Checked;
             txtMobil.ReadOnly = !chkÆndreOplysninger.Checked;
             txtTelefon.ReadOnly = !chkÆndreOplysninger.Checked;
+            txtEmail.ReadOnly = !chkÆndreOplysninger.Checked;
             // txtPatientId.ReadOnly = !chkÆndreOplysninger.Checked;
             txtBemærkninger.ReadOnly = !chkÆndreOplysninger.Checked;
             // txtCprNummer.ReadOnly = !chkÆndreOplysninger.Checked;
