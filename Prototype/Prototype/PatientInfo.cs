@@ -111,7 +111,7 @@ namespace Prototype
                     "Ny Patient",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-                if(result == DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     opretNyPatient = true;
                 }
