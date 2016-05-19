@@ -72,6 +72,23 @@ namespace Prototype
             string cpr;
             bool nyPatient;
 
+            // Først, check om vi er i gang med at ændre på en ny patient
+            if (opretNyPatient)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Advarsel: De nuværende patientoplysninger er ikke gemt endnu! \n\n" +
+                    "Du er ved at søge efter et CPR nummer i systemet, imens at der er patientdata som ikke er gemt. \n\n" +
+                    "Hvis du trykker Ja, bliver de nuværende patientoplysninger IKKE gemt i systemet. \n\n" + 
+                    "Er du sikker på at du vil fortsætte?",
+                    "Advarsel",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+
+                if (result == DialogResult.No)
+                {
+                    return; // Abryd event, og gå tilbage til start.
+                }
+            }
+
             // Sanitize CPR nummer
             txtSøgefelt.Text = Regex.Replace(txtSøgefelt.Text, "[^0-9]", "");
             cpr = txtSøgefelt.Text;
@@ -138,6 +155,9 @@ namespace Prototype
                 txtMobil.ReadOnly = false;
                 txtTelefon.ReadOnly = false;
                 txtBemærkninger.ReadOnly = false;
+
+                // Til sidst indsætter vi CPR nummeret i sin tekstboks
+                txtCprNummer.Text = cpr.ToString();
             }
             else
             {

@@ -187,7 +187,7 @@
             this.txtBemærkninger.Name = "txtBemærkninger";
             this.txtBemærkninger.ReadOnly = true;
             this.txtBemærkninger.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBemærkninger.Size = new System.Drawing.Size(331, 216);
+            this.txtBemærkninger.Size = new System.Drawing.Size(331, 222);
             this.txtBemærkninger.TabIndex = 11;
             // 
             // listBox1
@@ -199,7 +199,7 @@
             this.listBox1.Location = new System.Drawing.Point(6, 6);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(417, 381);
+            this.listBox1.Size = new System.Drawing.Size(419, 381);
             this.listBox1.TabIndex = 15;
             // 
             // txtPatientId
@@ -262,7 +262,7 @@
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(382, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(449, 449);
+            this.groupBox1.Size = new System.Drawing.Size(451, 455);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reservationer";
@@ -277,7 +277,7 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 17);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(437, 426);
+            this.tabControl1.Size = new System.Drawing.Size(439, 432);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -286,7 +286,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(429, 400);
+            this.tabPage1.Size = new System.Drawing.Size(431, 406);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Kommende behandlinger";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -343,7 +343,7 @@
             this.groupBox2.Controls.Add(this.txtMobil);
             this.groupBox2.Location = new System.Drawing.Point(12, 48);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(353, 449);
+            this.groupBox2.Size = new System.Drawing.Size(353, 455);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patientoplysninger";
@@ -369,7 +369,7 @@
             // 
             this.btnGemPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGemPatient.Enabled = false;
-            this.btnGemPatient.Location = new System.Drawing.Point(207, 406);
+            this.btnGemPatient.Location = new System.Drawing.Point(207, 412);
             this.btnGemPatient.Name = "btnGemPatient";
             this.btnGemPatient.Size = new System.Drawing.Size(135, 32);
             this.btnGemPatient.TabIndex = 13;
@@ -399,7 +399,7 @@
             this.chkÆndreOplysninger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkÆndreOplysninger.AutoSize = true;
             this.chkÆndreOplysninger.Enabled = false;
-            this.chkÆndreOplysninger.Location = new System.Drawing.Point(14, 415);
+            this.chkÆndreOplysninger.Location = new System.Drawing.Point(14, 421);
             this.chkÆndreOplysninger.Name = "chkÆndreOplysninger";
             this.chkÆndreOplysninger.Size = new System.Drawing.Size(145, 17);
             this.chkÆndreOplysninger.TabIndex = 12;
@@ -411,13 +411,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 507);
+            this.ClientSize = new System.Drawing.Size(842, 513);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSøg);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSøgefelt);
             this.Name = "PatientInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PatientInfo";
             this.Load += new System.EventHandler(this.PatientInfo_Load);
             this.groupBox1.ResumeLayout(false);
