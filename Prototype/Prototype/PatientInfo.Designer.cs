@@ -375,7 +375,7 @@
             this.chkÆndreOplysninger.TabIndex = 24;
             this.chkÆndreOplysninger.Text = "Ændre patientoplysninger";
             this.chkÆndreOplysninger.UseVisualStyleBackColor = true;
-            this.chkÆndreOplysninger.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chkÆndreOplysninger.CheckedChanged += new System.EventHandler(this.chkÆndreOplysninger_CheckedChanged);
             // 
             // btnGemPatient
             // 
