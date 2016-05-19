@@ -40,7 +40,7 @@ namespace Prototype
             txtCprNummer.Text = patient.cprnummer;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void chkÆndreOplysninger_CheckedChanged(object sender, EventArgs e)
         {
             txtFornavn.ReadOnly =! chkÆndreOplysninger.Checked;
             txtEfternavn.ReadOnly =! chkÆndreOplysninger.Checked;
