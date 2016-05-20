@@ -70,5 +70,26 @@ namespace Prototype
             conn.Close();
             return patient;
         }
+        public static void OpdaterPatient(Patient patient)
+        {
+            SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
+            SqlCommand Command = new SqlCommand();
+            Command.Connection = conn;
+            Command.CommandText = "SPpatientDataEnkeltPatient";
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("@patientID",patient.patientid);
+            Command.Parameters.AddWithValue("@CPRnr", patient.cprnummer);
+            Command.Parameters.AddWithValue("@fornavn",patient.fornavn);
+            Command.Parameters.AddWithValue("@efternavn",patient.efternavn);
+            Command.Parameters.AddWithValue("@adresse",patient.adresse);
+            Command.Parameters.AddWithValue("@postNr",patient.postnummer);
+            Command.Parameters.AddWithValue("@telefonnr",patient.telefon);
+            Command.Parameters.AddWithValue("@mobil",patient.mobil);
+            Command.Parameters.AddWithValue("@email",patient.email);
+            Command.Parameters.AddWithValue("@noter",patient.bemærkninger);
+            conn.Open();
+            Command.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
