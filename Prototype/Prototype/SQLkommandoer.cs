@@ -44,18 +44,29 @@ namespace Prototype
             SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
             SqlCommand Command = new SqlCommand();
             Command.Connection = conn;
-            Command.CommandText = "SPfindCPR";
+            Command.CommandText = "SPpatientDataEnkeltPatient";
             Command.CommandType = CommandType.StoredProcedure;
             Command.Parameters.AddWithValue("@CPRnr", CPR);
             Patient patient = new Patient();
             conn.Open();
             using (SqlDataReader reader = Command.ExecuteReader())
             {
-
-                //reader = Command.ExecuteReader();
                 while (reader.Read())
-                    patient = new Patient(reader.GetInt32(0),reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetInt32(5), reader.GetString(6), reader.GetString(7));
+                patient = new Patient(reader.GetInt32(0),//Patient ID
+                    reader.GetString(1),//CPR
+                    reader.GetString(2),//Fornavn
+                    reader.GetString(3),//Efternavn
+                    reader.GetString(4),//Addresse
+                    reader.GetInt32(5),//Post Nummer
+                    reader.GetString(6),//Bynavn
+                    reader.GetString(7),//Tlf
+                    reader.GetString(8),//Mobil
+                    reader.GetString(9),//Email
+                    reader.GetString(10),//Noter
+                    reader.GetInt32(11)//Sikrings gruppe
+                    );
             }
+
             conn.Close();
             return patient;
         }
