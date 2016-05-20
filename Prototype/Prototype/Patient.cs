@@ -19,7 +19,8 @@ namespace Prototype
         public string cprnummer;
         public int patientid;
         public string bemærkninger;
-        
+        public int sikringsgruppe;
+
 
         public Patient(string fornavn, string efternavn, string adresse, int postnummer, string by, string mobil, string telefon, string email, string cprnummer, int patientid,  /*string email*/ string bemærkninger)
 
@@ -36,18 +37,20 @@ namespace Prototype
             this.patientid = patientid;
             this.bemærkninger = bemærkninger;
         }
-        public Patient(int pid, string cpr, string fnavn, string enavn, string adr, int post, string telefon, string mobil)
+        public Patient(int patientid, string cprnummer, string fornavn, string efternavn, string adresse, int postnummer, string by, string telefon, string mobil, string email, string bemærkninger, int sikringsgruppe)
         {
-            patientid = pid;
-            cprnummer = cpr;
-            fornavn = fnavn;
-            efternavn = enavn;
-            adresse = adr;
-            postnummer = post;
+            this.patientid = patientid;
+            this.cprnummer = cprnummer;
+            this.fornavn = fornavn;
+            this.efternavn = efternavn;
+            this.adresse = adresse;
+            this.postnummer = postnummer;
+            this.by = by;
             this.telefon = telefon;
             this.mobil = mobil;
-            bemærkninger = "tom";
-            by = "test";
+            this.email = email;
+            this.bemærkninger = bemærkninger;
+            this.sikringsgruppe = sikringsgruppe;
         }
         public Patient() { }
     }
