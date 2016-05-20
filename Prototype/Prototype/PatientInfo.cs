@@ -72,6 +72,20 @@ namespace Prototype
             string cpr;
             bool nyPatient;
 
+            // event executes når søg-knappen klikkes. CPR-boksen skal forbindes med søgefunktionen.
+            patient = SQLkommandoer.FindPatient(textBox1.Text); //new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "2103932103", 315609, "Drastisk brug for ny krone!");
+
+            txtFornavn.Text = patient.fornavn;
+            txtEfternavn.Text = patient.efternavn;
+            txtAdresse.Text = patient.adresse;
+            txtPostnummer.Text = patient.postnummer.ToString();
+            txtBy.Text = patient.by;
+            txtMobil.Text = patient.mobil;
+            txtTelefon.Text = patient.telefon;
+            txtPatientId.Text = patient.patientid.ToString();
+            txtBemærkninger.Text = patient.bemærkninger;
+            txtCprNummer.Text = patient.cprnummer;
+
             // Først, check om vi er i gang med at ændre på en ny patient
             if (opretNyPatient)
             {
