@@ -37,6 +37,7 @@ namespace Prototype
             this.patientid = patientid;
             this.bemærkninger = bemærkninger;
         }
+
         public Patient(int patientid, string cprnummer, string fornavn, string efternavn, string adresse, int postnummer, string by, string telefon, string mobil, string email, string bemærkninger, int sikringsgruppe)
         {
             this.patientid = patientid;
