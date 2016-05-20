@@ -369,6 +369,20 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Telefon:";
             // 
+
+            // chkÆndreOplysninger
+            // 
+            this.chkÆndreOplysninger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkÆndreOplysninger.AutoSize = true;
+            this.chkÆndreOplysninger.Location = new System.Drawing.Point(14, 415);
+            this.chkÆndreOplysninger.Name = "chkÆndreOplysninger";
+            this.chkÆndreOplysninger.Size = new System.Drawing.Size(145, 17);
+            this.chkÆndreOplysninger.TabIndex = 24;
+            this.chkÆndreOplysninger.Text = "Ændre patientoplysninger";
+            this.chkÆndreOplysninger.UseVisualStyleBackColor = true;
+            this.chkÆndreOplysninger.CheckedChanged += new System.EventHandler(this.chkÆndreOplysninger_CheckedChanged);
+            // 
+
             // btnGemPatient
             // 
             this.btnGemPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
