@@ -44,7 +44,7 @@ namespace Prototype
             SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
             SqlCommand Command = new SqlCommand();
             Command.Connection = conn;
-            Command.CommandText = "SPpatientDataEnkeltPatient";
+            Command.CommandText = "SPfindCPR";
             Command.CommandType = CommandType.StoredProcedure;
             Command.Parameters.AddWithValue("@CPRnr", CPR);
             Patient patient = new Patient();
