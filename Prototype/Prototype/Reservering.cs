@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Prototype
 {
     public partial class Reservering : Form
     {
+        ArrayList tilgængeligtid = new ArrayList(18);
         public Reservering()
         {
             InitializeComponent();
