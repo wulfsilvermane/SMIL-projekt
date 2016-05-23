@@ -55,7 +55,30 @@ namespace Prototype
             txtCprNummer.Text = patient.cprnummer;
         }
 
+        public void NulstilTekstfelter(bool inklusivSøgefelt = true)
+        {
+            txtFornavn.Text = "";
+            txtEfternavn.Text = "";
+            txtAdresse.Text = "";
+            txtPostnummer.Text = "";
+            txtBy.Text = "";
+            txtMobil.Text = "";
+            txtTelefon.Text = "";
+            txtEmail.Text = "";
+            txtPatientId.Text = "";
+            txtBemærkninger.Text = "";
+            txtCprNummer.Text = "";
 
+            if (inklusivSøgefelt)
+                txtSøgefelt.Text = "";
+        }
+
+        public void NulstilAlt()
+        {
+            patient = new Patient();
+            opretNyPatient = false;
+            NulstilTekstfelter();
+        }
 
 
 
@@ -88,6 +111,11 @@ namespace Prototype
                 if (result == DialogResult.No)
                 {
                     return; // Abryd event, og gå tilbage til start.
+                }
+                else
+                {
+                    opretNyPatient = false;
+                    chkÆndreOplysninger.Checked = false;
                 }
             }
 
@@ -133,16 +161,7 @@ namespace Prototype
                     return; // Abryd event, og gå tilbage til start.
                 }
 
-                txtFornavn.Text = "";
-                txtEfternavn.Text = "";
-                txtAdresse.Text = "";
-                txtPostnummer.Text = "";
-                txtBy.Text = "";
-                txtMobil.Text = "";
-                txtTelefon.Text = "";
-                txtEmail.Text = "";
-                txtPatientId.Text = "";
-                txtBemærkninger.Text = "";
+                NulstilTekstfelter(false);
                 txtCprNummer.Text = cpr.ToString();
             }
             else // Hvis patienten findes, executes følgende kode
@@ -204,6 +223,7 @@ namespace Prototype
             // txtCprNummer.ReadOnly = !chkÆndreOplysninger.Checked;
 
             btnGemPatient.Enabled = chkÆndreOplysninger.Checked;
+            btnSletPatient.Enabled = chkÆndreOplysninger.Checked;
         }
 
         private void btnGemPatient_Click(object sender, EventArgs e)
@@ -251,6 +271,29 @@ namespace Prototype
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 GenopfriskData();
+            }
+        }
+
+        private void btnSletPatient_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                    "Advarsel: Denne handling vil fjerne patientoplysningerne fra databasen. Dette kan ikke fortrydes.\n\n" +
+                    "Er du sikker på at du vil slette patienten fra systemet?",
+                    "Sletning af patient fra systemet",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+
+            if (result == DialogResult.Yes)
+            {
+                SQLkommandoer.SletPatient(patient);
+
+                MessageBox.Show(
+                    "Patienten er nu slettet fra systemet.",
+                    "Patientoplysninger Slettet",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                NulstilAlt();
+                chkÆndreOplysninger.Checked = false;
+                chkÆndreOplysninger.Enabled = false;
             }
         }
     }
