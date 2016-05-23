@@ -72,6 +72,7 @@ namespace Prototype
             string cpr;
             bool nyPatient;
 
+            // Først, check om vi er i gang med at ændre på en ny patient, og at vi har glemt at gemme
             // event executes når søg-knappen klikkes. CPR-boksen skal forbindes med søgefunktionen.
             patient = SQLkommandoer.FindPatient(txtSøgefelt.Text); //new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "2103932103", 315609, "Drastisk brug for ny krone!");
 
@@ -115,8 +116,19 @@ namespace Prototype
                 return; // Afbryd event, så brugeren kan prøve igen.
             }
 
+            // event executes når søg-knappen klikkes. CPR-boksen skal forbindes med søgefunktionen.
+            patient = SQLkommandoer.FindPatient(txtSøgefelt.Text); //new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "2103932103", 315609, "Drastisk brug for ny krone!");
+
             // Tjek om CPR nummeret findes
-            nyPatient = !FindesCpr(cpr);
+            if (patient.cprnummer == null)
+            {
+                patient = null;
+                nyPatient = true;
+            }
+            else
+            {
+                nyPatient = false;
+            }
 
             if (nyPatient)
             {
@@ -134,12 +146,21 @@ namespace Prototype
                 {
                     return; // Abryd event, og gå tilbage til start.
                 }
+
+                txtFornavn.Text = "";
+                txtEfternavn.Text = "";
+                txtAdresse.Text = "";
+                txtPostnummer.Text = "";
+                txtBy.Text = "";
+                txtMobil.Text = "";
+                txtTelefon.Text = "";
+                txtEmail.Text = "";
+                txtPatientId.Text = "";
+                txtBemærkninger.Text = "";
+                txtCprNummer.Text = cpr.ToString();
             }
             else // Hvis patienten findes, executes følgende kode
             {
-                // PLACEHOLDER OBJEKT - ERSTAT MED DB KODE
-                patient = new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "Hans.Petersen@example.com", "2103932103", 315609, "Drastisk brug for ny krone!");
-
                 txtFornavn.Text = patient.fornavn;
                 txtEfternavn.Text = patient.efternavn;
                 txtAdresse.Text = patient.adresse;

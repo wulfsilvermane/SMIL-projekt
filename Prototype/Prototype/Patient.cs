@@ -20,7 +20,7 @@ namespace Prototype
         public int patientid;
         public string bemærkninger;
         public int sikringsgruppe;
-        
+
 
         public Patient(string fornavn, string efternavn, string adresse, int postnummer, string by, string mobil, string telefon, string email, string cprnummer, int patientid,  /*string email*/ string bemærkninger)
 
@@ -37,7 +37,8 @@ namespace Prototype
             this.patientid = patientid;
             this.bemærkninger = bemærkninger;
         }
-        public Patient(int patientid, string cprnummer, string fornavn, string efternavn, string adresse, int postnummer, string by, string telefon, string mobil,string email, string bemærkninger, int sikringsgruppe)
+
+        public Patient(int patientid, string cprnummer, string fornavn, string efternavn, string adresse, int postnummer, string by, string telefon, string mobil, string email, string bemærkninger, int sikringsgruppe)
         {
             this.patientid = patientid;
             this.cprnummer = cprnummer;
