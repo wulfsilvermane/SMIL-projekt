@@ -44,7 +44,7 @@ namespace Prototype
             SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
             SqlCommand Command = new SqlCommand();
             Command.Connection = conn;
-            Command.CommandText = "SPpatientDataEnkeltPatient";
+            Command.CommandText = "SPopdaterPatientOplysninger";
             Command.CommandType = CommandType.StoredProcedure;
             Command.Parameters.AddWithValue("@CPRnr", CPR);
             Patient patient = new Patient();
@@ -87,6 +87,39 @@ namespace Prototype
             Command.Parameters.AddWithValue("@mobil",patient.mobil);
             Command.Parameters.AddWithValue("@email",patient.email);
             Command.Parameters.AddWithValue("@noter",patient.bemærkninger);
+            conn.Open();
+            Command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void OpretPatient(Patient patient)
+        {
+            SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
+            SqlCommand Command = new SqlCommand();
+            Command.Connection = conn;
+            Command.CommandText = "SPpatientDataEnkeltPatient";
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("@CPRnr", patient.cprnummer);
+            Command.Parameters.AddWithValue("@fornavn", patient.fornavn);
+            Command.Parameters.AddWithValue("@efternavn", patient.efternavn);
+            Command.Parameters.AddWithValue("@adresse", patient.adresse);
+            Command.Parameters.AddWithValue("@postNr", patient.postnummer);
+            Command.Parameters.AddWithValue("@telefonnr", patient.telefon);
+            Command.Parameters.AddWithValue("@mobil", patient.mobil);
+            Command.Parameters.AddWithValue("@email", patient.email);
+            Command.Parameters.AddWithValue("@noter", patient.bemærkninger);
+            conn.Open();
+            Command.ExecuteNonQuery();
+            conn.Close();
+        }
+        public static void SletPatient(Patient patient)
+        {
+            SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
+            SqlCommand Command = new SqlCommand();
+            Command.Connection = conn;
+            Command.CommandText = "SPsletPatientc";
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("SPsletPatient", patient.patientid);
             conn.Open();
             Command.ExecuteNonQuery();
             conn.Close();

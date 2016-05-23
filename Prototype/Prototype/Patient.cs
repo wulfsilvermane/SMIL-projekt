@@ -23,7 +23,7 @@ namespace Prototype
 
 
         public Patient(string fornavn, string efternavn, string adresse, int postnummer, string by, string mobil, string telefon, string email, string cprnummer, int patientid,  /*string email*/ string bemærkninger)
-
+        //Kan slettes?
         {
             this.fornavn = fornavn;
             this.efternavn = efternavn;
