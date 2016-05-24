@@ -55,6 +55,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtMobil = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +104,7 @@
             this.groupBox2.Controls.Add(this.txtMobil);
             this.groupBox2.Location = new System.Drawing.Point(12, 38);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(353, 442);
+            this.groupBox2.Size = new System.Drawing.Size(353, 535);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patientoplysninger";
@@ -170,7 +171,7 @@
             this.txtBemærkninger.Name = "txtBemærkninger";
             this.txtBemærkninger.ReadOnly = true;
             this.txtBemærkninger.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBemærkninger.Size = new System.Drawing.Size(331, 239);
+            this.txtBemærkninger.Size = new System.Drawing.Size(331, 332);
             this.txtBemærkninger.TabIndex = 11;
             // 
             // textBox2
@@ -315,11 +316,19 @@
             this.listView1.TabIndex = 28;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.monthCalendar1.Location = new System.Drawing.Point(377, 411);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 29;
+            // 
             // Reservering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 492);
+            this.ClientSize = new System.Drawing.Size(1010, 585);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
@@ -362,5 +371,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtMobil;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
