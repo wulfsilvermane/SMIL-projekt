@@ -37,24 +37,23 @@ namespace Prototype
             return findes;
         }
 
-        /*public Patient FindPatient(string cpr)
+        public void GenopfriskData()
         {
-            
-        }*/
+            Patient buffer = SQLkommandoer.FindPatient(patient.cprnummer);
+            patient = buffer;
 
-        public void OpretPatient(Patient patient)
-        {
-            // TODO: Kode til at oprette patient i databasen
-
-            opretNyPatient = false; // SKAL være den sidste linje i metoden!
-                                    // Må ikke executes hvis oprettelsen fejler.
+            txtFornavn.Text = patient.fornavn;
+            txtEfternavn.Text = patient.efternavn;
+            txtAdresse.Text = patient.adresse;
+            txtPostnummer.Text = patient.postnummer.ToString();
+            txtBy.Text = patient.by;
+            txtMobil.Text = patient.mobil;
+            txtTelefon.Text = patient.telefon;
+            txtEmail.Text = patient.email;
+            txtPatientId.Text = patient.patientid.ToString();
+            txtBemærkninger.Text = patient.bemærkninger;
+            txtCprNummer.Text = patient.cprnummer;
         }
-
-        public void OpdaterPatient(Patient patient)
-        {
-            // TODO: Kode til at opdatere patient i databasen
-        }
-
 
 
 
@@ -72,21 +71,8 @@ namespace Prototype
             string cpr;
             bool nyPatient;
 
-            // Først, check om vi er i gang med at ændre på en ny patient, og at vi har glemt at gemme
-            // event executes når søg-knappen klikkes. CPR-boksen skal forbindes med søgefunktionen.
-            patient = SQLkommandoer.FindPatient(txtSøgefelt.Text); //new Patient("Hans", "Petersen", "Jeevej 22", 5100, "Leeby", "22 22 22 22", "33 33 33 33", "2103932103", 315609, "Drastisk brug for ny krone!");
-
-            txtFornavn.Text = patient.fornavn;
-            txtEfternavn.Text = patient.efternavn;
-            txtAdresse.Text = patient.adresse;
-            txtPostnummer.Text = patient.postnummer.ToString();
-            txtBy.Text = patient.by;
-            txtMobil.Text = patient.mobil;
-            txtTelefon.Text = patient.telefon;
-            txtPatientId.Text = patient.patientid.ToString();
-            txtBemærkninger.Text = patient.bemærkninger;
-            txtCprNummer.Text = patient.cprnummer;
-            txtEmail.Text = patient.email;
+            // Bare rolig, intet er forsvundet...
+            // koden til at hente patient og replace tekstbokse er lidt længere nede her (pga flow)
 
             // Først, check om vi er i gang med at ændre på en ny patient
             if (opretNyPatient)
@@ -222,27 +208,49 @@ namespace Prototype
 
         private void btnGemPatient_Click(object sender, EventArgs e)
         {
+            patient = new Patient();
+
+            patient.fornavn = txtFornavn.Text;
+            patient.efternavn = txtEfternavn.Text;
+            patient.adresse = txtAdresse.Text;
+            patient.postnummer = Convert.ToInt32(txtPostnummer.Text);
+            patient.by = txtBy.Text;
+            patient.mobil = txtMobil.Text;
+            patient.telefon = txtTelefon.Text;
+            patient.email = txtEmail.Text;
+            patient.bemærkninger = txtBemærkninger.Text;
+            patient.cprnummer = txtCprNummer.Text;
+
+            // UC 1.2 Opret Patient
             if (opretNyPatient == true)
             {
-                OpretPatient(patient);
+                SQLkommandoer.OpretPatient(patient);
 
                 // hvis success
                 MessageBox.Show(
                     "Den nye patient er nu gemt i systemet.",
                     "Ny Patient Gemt",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                opretNyPatient = false;
+
+                // refresh fra DB
+                GenopfriskData();
 
                 chkÆndreOplysninger.Enabled = true;
             }
-            else
+            else // UC 1.1.1 Opdater Patient
             {
-                OpdaterPatient(patient);
+                patient.patientid = Convert.ToInt32(txtPatientId.Text);
+
+                SQLkommandoer.OpdaterPatient(patient);
 
                 // hvis success
                 MessageBox.Show(
                     "Patientoplysningerne er nu gemt i systemet.",
                     "Patientoplysninger Opdateret",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                GenopfriskData();
             }
         }
     }
