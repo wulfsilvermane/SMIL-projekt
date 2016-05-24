@@ -22,17 +22,17 @@ namespace Prototype
         {
             this.id = id;
         }
-        public void SetLaege(Ansat _laege)
+        public void SetLaege(Ansat Læge)
         {
-            this._laege = _laege;
+            this.Læge = Læge;
         }
-        public void SetLokale(Lokale _lokale)
+        public void SetLokale(Lokale Lokale)
         {
-            this._lokale = _lokale;
+            this.Lokale = Lokale;
         }
-        public void SetPatient(Patient _patient)
+        public void SetPatient(Patient Patient)
         {
-            this._patient = _patient;
+            this.Patient = Patient;
         }
     }
 }
