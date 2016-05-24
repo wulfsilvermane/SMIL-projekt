@@ -10,13 +10,13 @@ namespace Prototype
     {
         enum Status {Reserveret, Tjekketind, Faerdig, Annulleret}   //Annulleret bruges til at sørge for at tiden bliver ledig, da der ved ikke fremmøde stadig bliver trukket nogen penge.
                                                                     //Reserveret bruges som default. Når en reservation er bestilt, ligger den i databasen. Er den ikke bestilt, ligger den kun i klienten
-        private Status _status;
+        private Status status;
         private int id;
-        private Patient _patient;
-        private Ansat _laege;
-        private Lokale _lokale;
+        public Patient Patient;
+        public Ansat Læge;
+        public Lokale Lokale;
         private string beskrivelse; //Noter omkring reservationen
-        private DateTime _starttid;
+        private DateTime starttid;
         private int varighed;   //Antal ½ timer som reservationen dækker; Tandlæger skema lægger i ½ timer.
         public Reservation(int id)
         {
