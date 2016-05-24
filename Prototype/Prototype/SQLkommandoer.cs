@@ -119,9 +119,9 @@ namespace Prototype
             SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
             SqlCommand Command = new SqlCommand();
             Command.Connection = conn;
-            Command.CommandText = "SPsletPatientc";
+            Command.CommandText = "SPsletPatient";
             Command.CommandType = CommandType.StoredProcedure;
-            Command.Parameters.AddWithValue("SPsletPatient", patient.patientid);
+            Command.Parameters.AddWithValue("@patientId", patient.patientid);
             conn.Open();
             Command.ExecuteNonQuery();
             conn.Close();
