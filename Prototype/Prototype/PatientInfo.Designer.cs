@@ -55,14 +55,15 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSletPatient = new System.Windows.Forms.Button();
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.chkÆndreOplysninger = new System.Windows.Forms.CheckBox();
             this.btnGemPatient = new System.Windows.Forms.Button();
             this.lblCprNr = new System.Windows.Forms.Label();
-            this.txtCprNummer = new System.Windows.Forms.TextBox();
-            this.chkÆndreOplysninger = new System.Windows.Forms.CheckBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtCprNummer = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -189,7 +190,7 @@
             this.txtBemærkninger.Name = "txtBemærkninger";
             this.txtBemærkninger.ReadOnly = true;
             this.txtBemærkninger.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBemærkninger.Size = new System.Drawing.Size(331, 196);
+            this.txtBemærkninger.Size = new System.Drawing.Size(331, 178);
             this.txtBemærkninger.TabIndex = 11;
             // 
             // listBox1
@@ -299,7 +300,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(429, 400);
+            this.tabPage2.Size = new System.Drawing.Size(431, 406);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Afsluttede behandlinger";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -320,6 +321,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.btnSletPatient);
             this.groupBox2.Controls.Add(this.txtTelefon);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.chkÆndreOplysninger);
@@ -352,6 +354,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patientoplysninger";
             // 
+            // btnSletPatient
+            // 
+            this.btnSletPatient.Enabled = false;
+            this.btnSletPatient.Location = new System.Drawing.Point(11, 412);
+            this.btnSletPatient.Name = "btnSletPatient";
+            this.btnSletPatient.Size = new System.Drawing.Size(131, 32);
+            this.btnSletPatient.TabIndex = 26;
+            this.btnSletPatient.Text = "Slet patient fra systemet";
+            this.btnSletPatient.UseVisualStyleBackColor = true;
+            this.btnSletPatient.Click += new System.EventHandler(this.btnSletPatient_Click);
+            // 
             // txtTelefon
             // 
             this.txtTelefon.Location = new System.Drawing.Point(242, 97);
@@ -369,20 +382,19 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Telefon:";
             // 
-
             // chkÆndreOplysninger
             // 
             this.chkÆndreOplysninger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkÆndreOplysninger.AutoSize = true;
-            this.chkÆndreOplysninger.Location = new System.Drawing.Point(14, 415);
+            this.chkÆndreOplysninger.Enabled = false;
+            this.chkÆndreOplysninger.Location = new System.Drawing.Point(13, 381);
             this.chkÆndreOplysninger.Name = "chkÆndreOplysninger";
             this.chkÆndreOplysninger.Size = new System.Drawing.Size(145, 17);
-            this.chkÆndreOplysninger.TabIndex = 24;
+            this.chkÆndreOplysninger.TabIndex = 12;
             this.chkÆndreOplysninger.Text = "Ændre patientoplysninger";
             this.chkÆndreOplysninger.UseVisualStyleBackColor = true;
             this.chkÆndreOplysninger.CheckedChanged += new System.EventHandler(this.chkÆndreOplysninger_CheckedChanged);
             // 
-
             // btnGemPatient
             // 
             this.btnGemPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -404,35 +416,6 @@
             this.lblCprNr.TabIndex = 22;
             this.lblCprNr.Text = "CPR-nummer:";
             // 
-            // txtCprNummer
-            // 
-            this.txtCprNummer.Location = new System.Drawing.Point(87, 151);
-            this.txtCprNummer.Name = "txtCprNummer";
-            this.txtCprNummer.ReadOnly = true;
-            this.txtCprNummer.Size = new System.Drawing.Size(86, 20);
-            this.txtCprNummer.TabIndex = 9;
-            // 
-            // chkÆndreOplysninger
-            // 
-            this.chkÆndreOplysninger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chkÆndreOplysninger.AutoSize = true;
-            this.chkÆndreOplysninger.Enabled = false;
-            this.chkÆndreOplysninger.Location = new System.Drawing.Point(14, 421);
-            this.chkÆndreOplysninger.Name = "chkÆndreOplysninger";
-            this.chkÆndreOplysninger.Size = new System.Drawing.Size(145, 17);
-            this.chkÆndreOplysninger.TabIndex = 12;
-            this.chkÆndreOplysninger.Text = "Ændre patientoplysninger";
-            this.chkÆndreOplysninger.UseVisualStyleBackColor = true;
-            this.chkÆndreOplysninger.CheckedChanged += new System.EventHandler(this.chkÆndreOplysninger_CheckedChanged);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(87, 123);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(255, 20);
-            this.txtEmail.TabIndex = 7;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -441,6 +424,22 @@
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Email:";
+            // 
+            // txtCprNummer
+            // 
+            this.txtCprNummer.Location = new System.Drawing.Point(87, 151);
+            this.txtCprNummer.Name = "txtCprNummer";
+            this.txtCprNummer.ReadOnly = true;
+            this.txtCprNummer.Size = new System.Drawing.Size(86, 20);
+            this.txtCprNummer.TabIndex = 9;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(87, 123);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(255, 20);
+            this.txtEmail.TabIndex = 7;
             // 
             // PatientInfo
             // 
@@ -504,5 +503,6 @@
         private System.Windows.Forms.CheckBox chkÆndreOplysninger;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Button btnSletPatient;
     }
 }
