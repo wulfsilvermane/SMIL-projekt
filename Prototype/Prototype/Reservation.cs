@@ -8,31 +8,36 @@ namespace Prototype
 {
     class Reservation
     {
-        enum Status {Reserveret, Tjekketind, Faerdig, Annulleret}   //Annulleret bruges til at sørge for at tiden bliver ledig, da der ved ikke fremmøde stadig bliver trukket nogen penge.
-                                                                    //Reserveret bruges som default. Når en reservation er bestilt, ligger den i databasen. Er den ikke bestilt, ligger den kun i klienten
-        private Status status;
+        private bool færdig;
         private int id;
         public Patient Patient;
-        public Ansat Læge;
         public Lokale Lokale;
-        private string beskrivelse; //Noter omkring reservationen
         private DateTime starttid;
-        private int varighed;   //Antal ½ timer som reservationen dækker; Tandlæger skema lægger i ½ timer.
-        public Reservation(int id)
+        public Reservation(DateTime tid, Lokale Lokale)
         {
-            this.id = id;
-        }
-        public void SetLaege(Ansat Læge)
-        {
-            this.Læge = Læge;
-        }
-        public void SetLokale(Lokale Lokale)
-        {
+            id = -1;
+            færdig = false;
             this.Lokale = Lokale;
+            starttid = tid;
+        }
+        public Reservation(DateTime tid)
+        {
+            id = -1;
+            færdig = false;
+            starttid = tid;
         }
         public void SetPatient(Patient Patient)
         {
             this.Patient = Patient;
+        }
+        public override string ToString()
+        {
+            if (id == -1)
+                return String.Format("{0} <tom>",starttid);
+            else
+            {
+                return String.Format("{0}{1}",starttid,Patient.efternavn);
+            };
         }
     }
 }

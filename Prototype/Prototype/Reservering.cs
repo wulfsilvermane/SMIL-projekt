@@ -13,7 +13,7 @@ namespace Prototype
 {
     public partial class Reservering : Form
     {
-        ArrayList tilgængeligtid = new ArrayList(18);
+
         public Reservering()
         {
             InitializeComponent();
