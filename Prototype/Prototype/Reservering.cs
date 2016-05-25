@@ -24,6 +24,8 @@ namespace Prototype
         {
             this.patient = patient;
             InitializeComponent();
+
+            this.Text = this.Text + " - " + patient.fornavn + " " + patient.efternavn;
         }
 
         private void Reservering_Load(object sender, EventArgs e)

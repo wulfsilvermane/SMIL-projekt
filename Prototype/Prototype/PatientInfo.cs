@@ -299,7 +299,8 @@ namespace Prototype
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Reservering rf = new Reservering(patient);
+            rf.Show();
         }
     }
 }
