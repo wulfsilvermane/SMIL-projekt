@@ -13,10 +13,27 @@ namespace Prototype
 {
     public partial class Reservering : Form
     {
+        private Patient patient;
         ArrayList tilgængeligtid = new ArrayList(18);
+
         public Reservering()
         {
             InitializeComponent();
+        }
+        public Reservering(Patient patient)
+        {
+            this.patient = patient;
+            InitializeComponent();
+        }
+
+        private void Reservering_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
