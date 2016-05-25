@@ -33,11 +33,9 @@ namespace Prototype
         public override string ToString()
         {
             if (id == -1)
-                return String.Format("{0} <tom>",starttid);
+                return String.Format("{0} - <tom>\nl\nl", starttid);
             else
-            {
-                return String.Format("{0}{1}",starttid,Patient.efternavn);
-            };
+                return String.Format("{0} - {3}\nl{1}\nl{2}", starttid,Patient.efternavn,Lokale.LokaleNavn,id);
         }
     }
 }

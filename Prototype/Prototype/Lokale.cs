@@ -9,16 +9,18 @@ namespace Prototype
     class Lokale
     {
         List<Reservation> tider = new List<Reservation>();
-        bool fuldtudstyret;
-        public Lokale(bool fuldtudstyret)
+        public bool fuldtudstyret;
+        public string LokaleNavn;
+        public Lokale(bool fuldtudstyret, string navn)
         {
             this.fuldtudstyret = fuldtudstyret;
+            LokaleNavn = navn;
         }
         public void GenererTider()
         {
             for(int i = 0; i > 18;i++)
             {
-                tider.Add(new Reservation(DateTime.Now.AddHours(i)));
+                tider.Add(new Reservation(DateTime.Now.AddHours(i),this));
             }
         }
     }
