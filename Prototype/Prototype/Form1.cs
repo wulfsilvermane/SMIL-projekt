@@ -22,5 +22,11 @@ namespace Prototype
             PatientInfo patientInfo = new PatientInfo();
             patientInfo.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Reservering reservering = new Reservering();
+            reservering.Show();
+        }
     }
 }

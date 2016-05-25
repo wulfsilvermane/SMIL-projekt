@@ -296,5 +296,10 @@ namespace Prototype
                 chkÆndreOplysninger.Enabled = false;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
