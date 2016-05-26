@@ -37,11 +37,14 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(262, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(160, 20);
             this.dateTimePicker1.TabIndex = 31;
@@ -71,7 +74,7 @@
             "16:00: ",
             "16:30: ",
             "17:00: "});
-            this.listBox1.Location = new System.Drawing.Point(12, 67);
+            this.listBox1.Location = new System.Drawing.Point(262, 67);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(200, 303);
             this.listBox1.TabIndex = 32;
@@ -81,7 +84,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(8, 40);
+            this.label12.Location = new System.Drawing.Point(258, 40);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(80, 24);
             this.label12.TabIndex = 36;
@@ -91,7 +94,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(216, 40);
+            this.label13.Location = new System.Drawing.Point(466, 40);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 24);
             this.label13.TabIndex = 37;
@@ -101,7 +104,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(422, 40);
+            this.label14.Location = new System.Drawing.Point(672, 40);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(80, 24);
             this.label14.TabIndex = 38;
@@ -111,7 +114,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(628, 40);
+            this.label15.Location = new System.Drawing.Point(878, 40);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(80, 24);
             this.label15.TabIndex = 39;
@@ -142,7 +145,7 @@
             "16:00: ",
             "16:30: ",
             "17:00: "});
-            this.listBox2.Location = new System.Drawing.Point(220, 67);
+            this.listBox2.Location = new System.Drawing.Point(470, 67);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(200, 303);
             this.listBox2.TabIndex = 40;
@@ -172,7 +175,7 @@
             "16:00: ",
             "16:30: ",
             "17:00: "});
-            this.listBox3.Location = new System.Drawing.Point(426, 67);
+            this.listBox3.Location = new System.Drawing.Point(676, 67);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(200, 303);
             this.listBox3.TabIndex = 41;
@@ -202,16 +205,46 @@
             "16:00: ",
             "16:30: ",
             "17:00: "});
-            this.listBox4.Location = new System.Drawing.Point(632, 67);
+            this.listBox4.Location = new System.Drawing.Point(882, 67);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(200, 303);
             this.listBox4.TabIndex = 42;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 11);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(230, 21);
+            this.comboBox1.TabIndex = 43;
+            this.comboBox1.Text = "Vælg læge";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Evner/Speciale:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 56);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(230, 314);
+            this.textBox1.TabIndex = 45;
             // 
             // Reservering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 437);
+            this.ClientSize = new System.Drawing.Size(1093, 437);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
@@ -239,5 +272,8 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
