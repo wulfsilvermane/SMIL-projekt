@@ -24,6 +24,8 @@ namespace Prototype
         {
             this.patient = patient;
             InitializeComponent();
+
+            this.Text = this.Text + " - " + patient.fornavn + " " + patient.efternavn;
         }
 
         private void Reservering_Load(object sender, EventArgs e)
@@ -32,6 +34,26 @@ namespace Prototype
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }

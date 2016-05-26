@@ -203,7 +203,7 @@
             this.listBox1.Location = new System.Drawing.Point(6, 6);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(419, 355);
+            this.listBox1.Size = new System.Drawing.Size(419, 342);
             this.listBox1.TabIndex = 15;
             // 
             // txtPatientId
@@ -267,7 +267,7 @@
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(382, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 485);
+            this.groupBox1.Size = new System.Drawing.Size(451, 443);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reservationer";
@@ -282,7 +282,7 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 17);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(439, 422);
+            this.tabControl1.Size = new System.Drawing.Size(439, 380);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -291,7 +291,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(431, 396);
+            this.tabPage1.Size = new System.Drawing.Size(431, 354);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Kommende behandlinger";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -302,7 +302,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(431, 406);
+            this.tabPage2.Size = new System.Drawing.Size(431, 354);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Afsluttede behandlinger";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -316,7 +316,7 @@
             this.listBox2.Location = new System.Drawing.Point(6, 6);
             this.listBox2.Name = "listBox2";
             this.listBox2.ScrollAlwaysVisible = true;
-            this.listBox2.Size = new System.Drawing.Size(417, 381);
+            this.listBox2.Size = new System.Drawing.Size(419, 342);
             this.listBox2.TabIndex = 16;
             // 
             // groupBox2
@@ -447,7 +447,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(132, 444);
+            this.button1.Location = new System.Drawing.Point(135, 402);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(190, 34);
             this.button1.TabIndex = 27;
