@@ -13,6 +13,7 @@ namespace Prototype
         public Patient Patient;
         public Lokale Lokale;
         private DateTime starttid;
+        public Reservation() { }
         public Reservation(DateTime tid, Lokale Lokale)
         {
             id = -1;
@@ -20,22 +21,22 @@ namespace Prototype
             this.Lokale = Lokale;
             starttid = tid;
         }
-        public Reservation(DateTime tid)
+        public Reservation(int resid, DateTime dato, string LokaleNavn,string fnavn, string enavn)
         {
-            id = -1;
+            id = resid;
             færdig = false;
-            starttid = tid;
-        }
-        public void SetPatient(Patient Patient)
-        {
-            this.Patient = Patient;
+            starttid = dato;
+            Patient = new Patient();
+            Patient.efternavn = enavn;
+            Patient.fornavn = fnavn;
+            Lokale = new Lokale(true, LokaleNavn);
         }
         public override string ToString()
         {
             if (id == -1)
-                return String.Format("{0} - <tom>\nl\nl", starttid);
+                return String.Format("{0} - <tom>\\n\\n", starttid);
             else
-                return String.Format("{0} - {3}\nl{1}\nl{2}", starttid,Patient.efternavn,Lokale.LokaleNavn,id);
+                return String.Format("{0} - {3}-{1}-{2}", starttid,Patient.efternavn,Lokale.LokaleNavn,id);
         }
     }
 }

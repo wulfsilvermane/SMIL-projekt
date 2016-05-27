@@ -126,5 +126,37 @@ namespace Prototype
             Command.ExecuteNonQuery();
             conn.Close();
         }
+        public static List<Reservation> HentReservation(DateTime starttid, DateTime sluttid)
+        {
+            List<Reservation> res = new List<Reservation>();
+            SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
+            SqlCommand Command = new SqlCommand();
+            Command.Connection = conn;
+            Command.CommandText = "SPseAlleReservationerIudvalgtTidsrum";
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("@startDato", starttid.Date);
+            Command.Parameters.AddWithValue("@slutDato", sluttid.Date);
+            conn.Open();
+            using (SqlDataReader reader = Command.ExecuteReader())
+            {
+                while (reader.Read())
+                    res.Add(new Reservation(reader.GetInt32(0),//Res ID
+                        reader.GetDateTime(1),//dato
+                        reader.GetString(3),//lokale navn
+                        reader.GetString(4),//fornavn
+                        reader.GetString(5)//efternavn
+                        ));
+                /*      res.Add(new Reservation(reader.GetInt32(0),//Res ID
+                        reader.GetDateTime(1),//dato
+                        reader.GetDateTime(2),//tid
+                        reader.GetString(4),//lokale navn
+                        reader.GetString(5),//fornavn
+                        reader.GetString(6)//efternavn
+                        ));
+                        */
+            }
+            conn.Close();
+            return res;
+        }
     }
 }
