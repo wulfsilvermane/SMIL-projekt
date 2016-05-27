@@ -28,7 +28,12 @@ namespace Prototype
         {
             this.patient = patient;
             InitializeComponent();
+<<<<<<< HEAD
             Lok1.GenererTider();
+=======
+
+            this.Text = this.Text + " - " + patient.fornavn + " " + patient.efternavn;
+>>>>>>> refs/remotes/origin/master
         }
 
         private void Reservering_Load(object sender, EventArgs e)
@@ -37,6 +42,26 @@ namespace Prototype
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }

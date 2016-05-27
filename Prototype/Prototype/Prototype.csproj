@@ -55,6 +55,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Lokale.cs" />
+    <Compile Include="OpretReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpretReservation.Designer.cs">
+      <DependentUpon>OpretReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patient.cs" />
     <Compile Include="PatientInfo.cs">
       <SubType>Form</SubType>
@@ -75,6 +81,9 @@
     <Compile Include="Reservation.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpretReservation.resx">
+      <DependentUpon>OpretReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientInfo.resx">
       <DependentUpon>PatientInfo.cs</DependentUpon>
