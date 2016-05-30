@@ -12,7 +12,7 @@ namespace Prototype
         private int id;
         public Patient Patient;
         public Lokale Lokale;
-        private DateTime starttid;
+        public DateTime starttid;
         public Reservation() { }
         public Reservation(DateTime tid, Lokale Lokale)
         {
@@ -21,7 +21,7 @@ namespace Prototype
             this.Lokale = Lokale;
             starttid = tid;
         }
-        public Reservation(int resid, DateTime dato, string LokaleNavn,string fnavn, string enavn)
+        public Reservation(int resid, DateTime dato, int LokaleNavn,string fnavn, string enavn)
         {
             id = resid;
             færdig = false;
@@ -36,7 +36,7 @@ namespace Prototype
             if (id == -1)
                 return String.Format("{0} - <tom>\\n\\n", starttid);
             else
-                return String.Format("{0} - {3}-{1}-{2}", starttid,Patient.efternavn,Lokale.LokaleNavn,id);
+                return String.Format("{0} - {3}-{1}-{2}", starttid,Patient.efternavn,Lokale.LokaleID,id);
         }
     }
 }

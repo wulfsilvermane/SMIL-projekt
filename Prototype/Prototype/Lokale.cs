@@ -10,11 +10,11 @@ namespace Prototype
     {
         public List<Reservation> tider = new List<Reservation>();
         public bool fuldtudstyret;
-        public string LokaleNavn;
-        public Lokale(bool fuldtudstyret, string navn)
+        public int LokaleID;
+        public Lokale(bool fuldtudstyret, int navn)
         {
             this.fuldtudstyret = fuldtudstyret;
-            LokaleNavn = navn;
+            LokaleID = navn;
         }
         public void GenererTider()
         {

@@ -142,7 +142,7 @@ namespace Prototype
                 while (reader.Read())
                     res.Add(new Reservation(reader.GetInt32(0),//Res ID
                         reader.GetDateTime(1),//dato
-                        reader.GetString(3),//lokale navn
+                        reader.GetInt32(3),//lokale navn
                         reader.GetString(4),//fornavn
                         reader.GetString(5)//efternavn
                         ));

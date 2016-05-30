@@ -43,9 +43,9 @@
             this.radioLok4 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.comboTidValg = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.textFornavn = new System.Windows.Forms.TextBox();
             this.textEfternavn = new System.Windows.Forms.TextBox();
             this.textCprNummer = new System.Windows.Forms.TextBox();
@@ -61,6 +61,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(159, 20);
             this.dateTimePicker1.TabIndex = 31;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // listBox1
             // 
@@ -191,7 +192,6 @@
             this.buttonReserverTid.TabIndex = 46;
             this.buttonReserverTid.Text = "Reserver Tid";
             this.buttonReserverTid.UseVisualStyleBackColor = true;
-            this.buttonReserverTid.Click += new System.EventHandler(this.button1_Click);
             // 
             // radioLok1
             // 
@@ -300,14 +300,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tid for reservation";
             // 
-            // button2
+            // comboTidValg
             // 
-            this.button2.Location = new System.Drawing.Point(89, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 23);
-            this.button2.TabIndex = 58;
-            this.button2.Text = "Næste dag";
-            this.button2.UseVisualStyleBackColor = true;
+            this.comboTidValg.FormattingEnabled = true;
+            this.comboTidValg.Location = new System.Drawing.Point(6, 74);
+            this.comboTidValg.Name = "comboTidValg";
+            this.comboTidValg.Size = new System.Drawing.Size(159, 21);
+            this.comboTidValg.TabIndex = 62;
             // 
             // button3
             // 
@@ -318,18 +317,20 @@
             this.button3.Text = "Forrige dag";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // comboTidValg
+            // button2
             // 
-            this.comboTidValg.FormattingEnabled = true;
-            this.comboTidValg.Location = new System.Drawing.Point(6, 74);
-            this.comboTidValg.Name = "comboTidValg";
-            this.comboTidValg.Size = new System.Drawing.Size(159, 21);
-            this.comboTidValg.TabIndex = 62;
+            this.button2.Location = new System.Drawing.Point(89, 45);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(76, 23);
+            this.button2.TabIndex = 58;
+            this.button2.Text = "Næste dag";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // textFornavn
             // 
             this.textFornavn.Location = new System.Drawing.Point(6, 21);
             this.textFornavn.Name = "textFornavn";
+            this.textFornavn.ReadOnly = true;
             this.textFornavn.Size = new System.Drawing.Size(159, 20);
             this.textFornavn.TabIndex = 61;
             // 
@@ -337,6 +338,7 @@
             // 
             this.textEfternavn.Location = new System.Drawing.Point(6, 47);
             this.textEfternavn.Name = "textEfternavn";
+            this.textEfternavn.ReadOnly = true;
             this.textEfternavn.Size = new System.Drawing.Size(159, 20);
             this.textEfternavn.TabIndex = 62;
             // 
@@ -344,6 +346,7 @@
             // 
             this.textCprNummer.Location = new System.Drawing.Point(6, 73);
             this.textCprNummer.Name = "textCprNummer";
+            this.textCprNummer.ReadOnly = true;
             this.textCprNummer.Size = new System.Drawing.Size(159, 20);
             this.textCprNummer.TabIndex = 63;
             // 
