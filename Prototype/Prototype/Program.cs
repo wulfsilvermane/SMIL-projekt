@@ -15,7 +15,6 @@ namespace Prototype
         [STAThread]
         static void Main()
         {
-            //SQLkommandoer.IndsaetBynavn(6000, "Kolding");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartMenu());

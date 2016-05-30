@@ -15,17 +15,25 @@ namespace Prototype
     {
         private Patient patient;
         ArrayList tilgængeligtid = new ArrayList(18);
-
+        Lokale Lok1 = new Lokale(true, "Lokale 101");
+        List<Reservation> testlist = SQLkommandoer.HentReservation(new DateTime(2016,1,1),new DateTime(2016,8,15));
         public Reservering()
         {
             InitializeComponent();
+            Lok1.GenererTider();
+            listBox1.DataSource = Lok1.tider;
+            listBox2.DataSource = testlist;
         }
         public Reservering(Patient patient)
         {
             this.patient = patient;
             InitializeComponent();
+<<<<<<< HEAD
+            Lok1.GenererTider();
+=======
 
             this.Text = this.Text + " - " + patient.fornavn + " " + patient.efternavn;
+>>>>>>> refs/remotes/origin/master
         }
 
         private void Reservering_Load(object sender, EventArgs e)
