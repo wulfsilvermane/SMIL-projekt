@@ -14,26 +14,22 @@ namespace Prototype
     public partial class Reservering : Form
     {
         private Patient patient;
-        ArrayList tilgængeligtid = new ArrayList(18);
-        Lokale Lok1 = new Lokale(true, "Lokale 101");
-        List<Reservation> testlist = SQLkommandoer.HentReservation(new DateTime(2016,1,1),new DateTime(2016,8,15));
+        static DateTime starttid = DateTime.Today.AddDays(-1);
+        static DateTime sluttid = DateTime.Today.AddDays(28);
+        List<Reservation> ResListe = SQLkommandoer.HentReservation(starttid,sluttid);
+        List<Reservation> Lok1Res = new List<Reservation>();
+        List<Reservation> Lok2Res = new List<Reservation>();
+        List<Reservation> Lok3Res = new List<Reservation>();
+        List<Reservation> Lok4Res = new List<Reservation>();
+
         public Reservering()
         {
-            InitializeComponent();
-            Lok1.GenererTider();
-            listBox1.DataSource = Lok1.tider;
-            listBox2.DataSource = testlist;
+            InitializeComponent();            
         }
         public Reservering(Patient patient)
         {
             this.patient = patient;
             InitializeComponent();
-<<<<<<< HEAD
-            Lok1.GenererTider();
-=======
-
-            this.Text = this.Text + " - " + patient.fornavn + " " + patient.efternavn;
->>>>>>> refs/remotes/origin/master
         }
 
         private void Reservering_Load(object sender, EventArgs e)
