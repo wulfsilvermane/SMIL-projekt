@@ -28,12 +28,8 @@ namespace Prototype
         {
             this.patient = patient;
             InitializeComponent();
-<<<<<<< HEAD
             Lok1.GenererTider();
-=======
-
             this.Text = this.Text + " - " + patient.fornavn + " " + patient.efternavn;
->>>>>>> refs/remotes/origin/master
         }
 
         private void Reservering_Load(object sender, EventArgs e)
