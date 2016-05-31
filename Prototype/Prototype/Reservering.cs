@@ -13,7 +13,8 @@ namespace Prototype
 {
     public partial class Reservering : Form
     {
-        private Patient patient;
+        public Patient patient;
+        private Reservation reservation;
         static DateTime starttid = DateTime.Today.AddDays(-1);
         static DateTime sluttid = DateTime.Today.AddDays(28);
         List<Reservation> ResListe = SQLkommandoer.HentReservation(starttid, sluttid);
@@ -25,6 +26,7 @@ namespace Prototype
         public Reservering()
         {
             InitializeComponent();
+            buttonReserverTid.Enabled = false;
         }
         public Reservering(Patient patient)
         {
@@ -43,11 +45,6 @@ namespace Prototype
             listBox4.DataSource = DagsDato(4);
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             listBox1.DataSource = DagsDato(1);
@@ -60,10 +57,26 @@ namespace Prototype
             List<Reservation> reslist = new List<Reservation>();
             for (int i = ResListe.Count-1; i >= 0; i--)
             {
-                if ((ResListe[i].starttid.DayOfYear == dateTimePicker1.Value.DayOfYear) && (ResListe[i].Lokale.LokaleID == lokale))
+                if ((ResListe[i].starttid.DayOfYear == dateTimePicker1.Value.DayOfYear) && (ResListe[i].lokaleid == lokale))
                     reslist.Add(ResListe[i]);
             }
             return reslist;
+        }
+
+        private void buttonForrigedag_Click(object sender, EventArgs e)
+        {
+            dateTimePicker1.Value = dateTimePicker1.Value.AddDays(-1);
+        }
+
+        private void buttonNæstedag_Click(object sender, EventArgs e)
+        {
+            dateTimePicker1.Value = dateTimePicker1.Value.AddDays(1);
+        }
+
+        private void buttonReserverTid_Click(object sender, EventArgs e)
+        {
+            reservation = new Reservation(patient,dateTimePicker1.Value, dateTimePicker2.Value,1);
+            SQLkommandoer.NyReservation(reservation);
         }
     }
 }

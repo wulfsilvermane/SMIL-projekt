@@ -13,7 +13,7 @@ namespace Prototype
 {
     public partial class PatientInfo : Form
     {
-        private Patient patient;
+        public Patient patient;
         private bool opretNyPatient; // flag til at indikere om der skal oprettes ny patient
 
         public PatientInfo()
