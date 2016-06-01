@@ -166,10 +166,9 @@ namespace Prototype
             Command.CommandText = "SPopretReservation";
             Command.CommandType = CommandType.StoredProcedure;
             Command.Parameters.AddWithValue("@reservationsDato", reservation.starttid);
-            Command.Parameters.AddWithValue("@reservationstid", reservation.starttidtid);
+            Command.Parameters.AddWithValue("@reservationstid", reservation.startdato);
             Command.Parameters.AddWithValue("@patientID", reservation.Patient.patientid);
             Command.Parameters.AddWithValue("@behandlingsID", reservation.lokaleid);
-
             conn.Open();
             Command.ExecuteNonQuery();
             conn.Close();

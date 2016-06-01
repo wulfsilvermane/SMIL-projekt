@@ -22,21 +22,7 @@ namespace Prototype
             InitializeComponent();
         }
 
-        public bool FindesCpr(string cpr)
-        {
-            bool findes;
-            // Pre-condition: CPR nummeret må ikke have mellemrum eller specialtegn, som bindestreg
-            // OK:      "1212851234"
-            // Ikke OK: "12 12 85 1234"
-            //          "121285-1234"     osv.
-
-            // TODO: Indsæt kode her, som kigger op på databasen
-            // Hvis den findes, skal der returneres 'true', ellers skal den returnere 'false'
-            findes = true; // PLACEHOLDER
-
-            return findes;
-        }
-
+        
         public void GenopfriskData()
         {
             Patient buffer = SQLkommandoer.FindPatient(patient.cprnummer);

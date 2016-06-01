@@ -15,9 +15,9 @@ namespace Prototype
     {
         public Patient patient;
         private Reservation reservation;
-        static DateTime starttid = DateTime.Today.AddDays(-1);
-        static DateTime sluttid = DateTime.Today.AddDays(28);
-        List<Reservation> ResListe = SQLkommandoer.HentReservation(starttid, sluttid);
+        static DateTime startsøgning = DateTime.Today.AddDays(-1);
+        static DateTime slutsøgning = DateTime.Today.AddDays(28);
+        List<Reservation> ResListe = SQLkommandoer.HentReservation(startsøgning, slutsøgning);
         List<Reservation> Lok1Res = new List<Reservation>();
         List<Reservation> Lok2Res = new List<Reservation>();
         List<Reservation> Lok3Res = new List<Reservation>();
@@ -57,7 +57,7 @@ namespace Prototype
             List<Reservation> reslist = new List<Reservation>();
             for (int i = ResListe.Count-1; i >= 0; i--)
             {
-                if ((ResListe[i].starttid.DayOfYear == dateTimePicker1.Value.DayOfYear) && (ResListe[i].lokaleid == lokale))
+                if ((ResListe[i].starttid.DayOfYear == dateTimePickerDato.Value.DayOfYear) && (ResListe[i].lokaleid == lokale))
                     reslist.Add(ResListe[i]);
             }
             return reslist;
@@ -65,17 +65,17 @@ namespace Prototype
 
         private void buttonForrigedag_Click(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = dateTimePicker1.Value.AddDays(-1);
+            dateTimePickerDato.Value = dateTimePickerDato.Value.AddDays(-1);
         }
 
         private void buttonNæstedag_Click(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = dateTimePicker1.Value.AddDays(1);
+            dateTimePickerDato.Value = dateTimePickerDato.Value.AddDays(1);
         }
 
         private void buttonReserverTid_Click(object sender, EventArgs e)
         {
-            reservation = new Reservation(patient,dateTimePicker1.Value, dateTimePicker2.Value,1);
+            reservation = new Reservation(patient,dateTimePickerDato.Value, dateTimePickerTid.Value,1);
             SQLkommandoer.NyReservation(reservation);
         }
     }

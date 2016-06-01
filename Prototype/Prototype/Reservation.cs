@@ -8,27 +8,22 @@ namespace Prototype
 {
     class Reservation
     {
-        private bool færdig;
         private int id;
         public int lokaleid;
         public Patient Patient;
+        public DateTime startdato;
         public DateTime starttid;
-        public DateTime starttidtid;
 
-        public Reservation() { }
         public Reservation(Patient patient , DateTime dato, DateTime tid, int Lokale)
         {
             Patient = patient;
-            id = -1;
-            færdig = false;
+            startdato = dato;
+            starttid = tid;
             lokaleid = Lokale;
-            starttid = dato;
-            starttidtid = tid;
         }
         public Reservation(int resid, DateTime dato, int LokaleID,string fnavn, string enavn)
         {
             id = resid;
-            færdig = false;
             starttid = dato;
             Patient = new Patient();
             Patient.efternavn = enavn;

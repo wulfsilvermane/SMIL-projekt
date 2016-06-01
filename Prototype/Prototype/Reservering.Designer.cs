@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDato = new System.Windows.Forms.DateTimePicker();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
@@ -43,25 +43,27 @@
             this.radioLok4 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerTid = new System.Windows.Forms.DateTimePicker();
             this.buttonForrigedag = new System.Windows.Forms.Button();
             this.buttonNæstedag = new System.Windows.Forms.Button();
             this.textFornavn = new System.Windows.Forms.TextBox();
             this.textEfternavn = new System.Windows.Forms.TextBox();
             this.textCprNummer = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dateTimePickerDato
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(159, 20);
-            this.dateTimePicker1.TabIndex = 31;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePickerDato.Location = new System.Drawing.Point(6, 19);
+            this.dateTimePickerDato.Name = "dateTimePickerDato";
+            this.dateTimePickerDato.Size = new System.Drawing.Size(159, 20);
+            this.dateTimePickerDato.TabIndex = 31;
+            this.dateTimePickerDato.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // listBox1
             // 
@@ -289,10 +291,11 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.dateTimePickerTid);
             this.groupBox2.Controls.Add(this.buttonForrigedag);
             this.groupBox2.Controls.Add(this.buttonNæstedag);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dateTimePickerDato);
             this.groupBox2.Location = new System.Drawing.Point(12, 131);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(171, 103);
@@ -300,13 +303,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tid for reservation";
             // 
-            // dateTimePicker2
+            // dateTimePickerTid
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(6, 74);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(159, 20);
-            this.dateTimePicker2.TabIndex = 62;
+            this.dateTimePickerTid.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerTid.Location = new System.Drawing.Point(6, 74);
+            this.dateTimePickerTid.Name = "dateTimePickerTid";
+            this.dateTimePickerTid.ShowUpDown = true;
+            this.dateTimePickerTid.Size = new System.Drawing.Size(76, 20);
+            this.dateTimePickerTid.TabIndex = 62;
             // 
             // buttonForrigedag
             // 
@@ -364,6 +368,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Patient";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(89, 74);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(76, 20);
+            this.numericUpDown1.TabIndex = 63;
+            // 
             // Reservering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,13 +400,14 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDato;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
@@ -416,6 +428,7 @@
         private System.Windows.Forms.TextBox textEfternavn;
         private System.Windows.Forms.TextBox textCprNummer;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTid;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
