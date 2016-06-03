@@ -15,6 +15,8 @@ namespace Prototype
     {
         public Patient patient;
         private Reservation reservation;
+        private Behandling behandling;
+        private int lokale = 1;
         static DateTime startsøgning = DateTime.Today.AddDays(-1);
         static DateTime slutsøgning = DateTime.Today.AddDays(28);
         List<Reservation> ResListe = SQLkommandoer.HentReservation(startsøgning, slutsøgning);
@@ -28,9 +30,10 @@ namespace Prototype
             InitializeComponent();
             buttonReserverTid.Enabled = false;
         }
-        public Reservering(Patient patient)
+        public Reservering(Patient patient, Behandling behandling)
         {
             this.patient = patient;
+            this.behandling = behandling;
             InitializeComponent();
             textFornavn.Text = patient.fornavn;
             textEfternavn.Text = patient.efternavn;
@@ -76,7 +79,27 @@ namespace Prototype
         private void buttonReserverTid_Click(object sender, EventArgs e)
         {
             reservation = new Reservation(patient,dateTimePickerDato.Value, dateTimePickerTid.Value,1);
-            SQLkommandoer.NyReservation(reservation);
+            SQLkommandoer.NyReservation(reservation,behandling,lokale);
+        }
+
+        private void radioLok1_CheckedChanged(object sender, EventArgs e)
+        {
+            lokale = 1;
+        }
+
+        private void radioLok2_CheckedChanged(object sender, EventArgs e)
+        {
+            lokale = 2;
+        }
+
+        private void radioLok3_CheckedChanged(object sender, EventArgs e)
+        {
+            lokale = 3;
+        }
+
+        private void radioLok4_CheckedChanged(object sender, EventArgs e)
+        {
+            lokale = 4;
         }
     }
 }

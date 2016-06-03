@@ -50,6 +50,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnSøg = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonOpretBehandling = new System.Windows.Forms.Button();
+            this.buttonOpretReservation = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -64,7 +66,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtCprNummer = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonFindBehandlinger = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -205,6 +207,7 @@
             this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(419, 342);
             this.listBox1.TabIndex = 15;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // txtPatientId
             // 
@@ -263,7 +266,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.buttonOpretBehandling);
+            this.groupBox1.Controls.Add(this.buttonOpretReservation);
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(382, 48);
             this.groupBox1.Name = "groupBox1";
@@ -271,6 +275,29 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reservationer";
+            // 
+            // buttonOpretBehandling
+            // 
+            this.buttonOpretBehandling.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpretBehandling.Location = new System.Drawing.Point(6, 403);
+            this.buttonOpretBehandling.Name = "buttonOpretBehandling";
+            this.buttonOpretBehandling.Size = new System.Drawing.Size(190, 34);
+            this.buttonOpretBehandling.TabIndex = 28;
+            this.buttonOpretBehandling.Text = "Opret Behandling";
+            this.buttonOpretBehandling.UseVisualStyleBackColor = true;
+            this.buttonOpretBehandling.Click += new System.EventHandler(this.buttonOpretBehandling_Click);
+            // 
+            // buttonOpretReservation
+            // 
+            this.buttonOpretReservation.Enabled = false;
+            this.buttonOpretReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpretReservation.Location = new System.Drawing.Point(255, 403);
+            this.buttonOpretReservation.Name = "buttonOpretReservation";
+            this.buttonOpretReservation.Size = new System.Drawing.Size(190, 34);
+            this.buttonOpretReservation.TabIndex = 27;
+            this.buttonOpretReservation.Text = "Opret Reservation";
+            this.buttonOpretReservation.UseVisualStyleBackColor = true;
+            this.buttonOpretReservation.Click += new System.EventHandler(this.buttonOpretReservation_Click);
             // 
             // tabControl1
             // 
@@ -444,22 +471,22 @@
             this.txtEmail.Size = new System.Drawing.Size(255, 20);
             this.txtEmail.TabIndex = 7;
             // 
-            // button1
+            // buttonFindBehandlinger
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(135, 402);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 34);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Opret Reservation";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonFindBehandlinger.Location = new System.Drawing.Point(382, 14);
+            this.buttonFindBehandlinger.Name = "buttonFindBehandlinger";
+            this.buttonFindBehandlinger.Size = new System.Drawing.Size(150, 23);
+            this.buttonFindBehandlinger.TabIndex = 27;
+            this.buttonFindBehandlinger.Text = "<debug>Find behandlinger";
+            this.buttonFindBehandlinger.UseVisualStyleBackColor = true;
+            this.buttonFindBehandlinger.Click += new System.EventHandler(this.buttonFindBehandlinger_Click);
             // 
             // PatientInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 543);
+            this.Controls.Add(this.buttonFindBehandlinger);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSøg);
@@ -518,6 +545,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSletPatient;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonOpretReservation;
+        private System.Windows.Forms.Button buttonOpretBehandling;
+        private System.Windows.Forms.Button buttonFindBehandlinger;
     }
 }

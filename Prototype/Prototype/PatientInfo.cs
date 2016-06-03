@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Microsoft.VisualBasic;
 
 namespace Prototype
 {
@@ -15,7 +16,7 @@ namespace Prototype
     {
         public Patient patient;
         private bool opretNyPatient; // flag til at indikere om der skal oprettes ny patient
-
+        private List<Behandling> behandlinger;
         public PatientInfo()
         {
             opretNyPatient = false;
@@ -283,10 +284,28 @@ namespace Prototype
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonOpretReservation_Click(object sender, EventArgs e)
         {
-            Reservering rf = new Reservering(patient);
+            Reservering rf = new Reservering(patient,behandlinger[listBox1.SelectedIndex]);
             rf.Show();
+        }
+
+        private void buttonFindBehandlinger_Click(object sender, EventArgs e)
+        {
+            behandlinger = SQLkommandoer.HentPatientBehandlinger(patient);
+            listBox1.DataSource = behandlinger;
+        }
+
+        private void buttonOpretBehandling_Click(object sender, EventArgs e)
+        {
+            SQLkommandoer.OpretBehandling(patient, "test");
+            /*OpretBehandling rf = new OpretBehandling();
+            rf.Show();*/
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buttonOpretReservation.Enabled = true;
         }
     }
 }

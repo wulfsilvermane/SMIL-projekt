@@ -11,7 +11,7 @@ namespace Prototype
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        public static string SQLforbindelse = "Server=SUPERLAPPY\\DATAMATSERVER;Database=SMIL_projekt;user id=tinker;password=Tink";
+        public static string SQLforbindelse = "Server=SUPERLAPPY\\DATAMATSERVER;Database=SMIL_4;user id=tinker;password=Tink";
         [STAThread]
         static void Main()
         {

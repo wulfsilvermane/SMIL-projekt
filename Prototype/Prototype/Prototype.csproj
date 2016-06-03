@@ -47,12 +47,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ansat.cs" />
+    <Compile Include="Behandling.cs" />
     <Compile Include="Faktura.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpretBehandling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpretBehandling.Designer.cs">
+      <DependentUpon>OpretBehandling.cs</DependentUpon>
     </Compile>
     <Compile Include="OpretReservation.cs">
       <SubType>Form</SubType>
@@ -80,6 +87,9 @@
     <Compile Include="Reservation.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpretBehandling.resx">
+      <DependentUpon>OpretBehandling.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpretReservation.resx">
       <DependentUpon>OpretReservation.cs</DependentUpon>

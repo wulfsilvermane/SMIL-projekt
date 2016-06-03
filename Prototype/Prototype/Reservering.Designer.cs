@@ -43,6 +43,7 @@
             this.radioLok4 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dateTimePickerTid = new System.Windows.Forms.DateTimePicker();
             this.buttonForrigedag = new System.Windows.Forms.Button();
             this.buttonNæstedag = new System.Windows.Forms.Button();
@@ -50,11 +51,10 @@
             this.textEfternavn = new System.Windows.Forms.TextBox();
             this.textCprNummer = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateTimePickerDato
@@ -198,6 +198,7 @@
             // radioLok1
             // 
             this.radioLok1.AutoSize = true;
+            this.radioLok1.Checked = true;
             this.radioLok1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioLok1.Location = new System.Drawing.Point(189, 26);
             this.radioLok1.Name = "radioLok1";
@@ -207,6 +208,7 @@
             this.radioLok1.TabStop = true;
             this.radioLok1.Text = "Lokale 1";
             this.radioLok1.UseVisualStyleBackColor = true;
+            this.radioLok1.CheckedChanged += new System.EventHandler(this.radioLok1_CheckedChanged);
             // 
             // checkBoxKrone
             // 
@@ -247,9 +249,9 @@
             this.radioLok2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioLok2.Size = new System.Drawing.Size(87, 24);
             this.radioLok2.TabIndex = 54;
-            this.radioLok2.TabStop = true;
             this.radioLok2.Text = "Lokale 2";
             this.radioLok2.UseVisualStyleBackColor = true;
+            this.radioLok2.CheckedChanged += new System.EventHandler(this.radioLok2_CheckedChanged);
             // 
             // radioLok3
             // 
@@ -260,9 +262,9 @@
             this.radioLok3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioLok3.Size = new System.Drawing.Size(87, 24);
             this.radioLok3.TabIndex = 55;
-            this.radioLok3.TabStop = true;
             this.radioLok3.Text = "Lokale 3";
             this.radioLok3.UseVisualStyleBackColor = true;
+            this.radioLok3.CheckedChanged += new System.EventHandler(this.radioLok3_CheckedChanged);
             // 
             // radioLok4
             // 
@@ -273,9 +275,9 @@
             this.radioLok4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioLok4.Size = new System.Drawing.Size(87, 24);
             this.radioLok4.TabIndex = 56;
-            this.radioLok4.TabStop = true;
             this.radioLok4.Text = "Lokale 4";
             this.radioLok4.UseVisualStyleBackColor = true;
+            this.radioLok4.CheckedChanged += new System.EventHandler(this.radioLok4_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -302,6 +304,13 @@
             this.groupBox2.TabIndex = 60;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tid for reservation";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(89, 74);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(76, 20);
+            this.numericUpDown1.TabIndex = 63;
             // 
             // dateTimePickerTid
             // 
@@ -368,13 +377,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Patient";
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(89, 74);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(76, 20);
-            this.numericUpDown1.TabIndex = 63;
-            // 
             // Reservering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,9 +400,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
