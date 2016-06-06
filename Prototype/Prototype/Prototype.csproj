@@ -48,24 +48,11 @@
   <ItemGroup>
     <Compile Include="Ansat.cs" />
     <Compile Include="Behandling.cs" />
-    <Compile Include="Faktura.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OpretBehandling.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OpretBehandling.Designer.cs">
-      <DependentUpon>OpretBehandling.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OpretReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OpretReservation.Designer.cs">
-      <DependentUpon>OpretReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="Patient.cs" />
     <Compile Include="PatientInfo.cs">
@@ -83,16 +70,9 @@
       <DependentUpon>Reservering.cs</DependentUpon>
     </Compile>
     <Compile Include="SQLkommandoer.cs" />
-    <Compile Include="Udstyr.cs" />
     <Compile Include="Reservation.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OpretBehandling.resx">
-      <DependentUpon>OpretBehandling.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OpretReservation.resx">
-      <DependentUpon>OpretReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientInfo.resx">
       <DependentUpon>PatientInfo.cs</DependentUpon>

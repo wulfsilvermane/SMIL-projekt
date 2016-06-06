@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Prototype
 {
@@ -100,6 +101,52 @@ namespace Prototype
         private void radioLok4_CheckedChanged(object sender, EventArgs e)
         {
             lokale = 4;
+        }
+
+        private void buttonLok1Udskriv_Click(object sender, EventArgs e)
+        {
+            udskrivDagsorden(listBox1, "Lokale 1", dateTimePickerDato.Value.Date);
+        }
+        
+
+        private void buttonLok2Udskriv_Click(object sender, EventArgs e)
+        {
+            udskrivDagsorden(listBox2, "Lokale 2", dateTimePickerDato.Value.Date);
+        }
+        
+        private void buttonLok3Udskriv_Click(object sender, EventArgs e)
+        {
+            udskrivDagsorden(listBox3, "Lokale 3", dateTimePickerDato.Value.Date);
+        }
+
+        private void buttonLok4Udskriv_Click(object sender, EventArgs e)
+        {
+            udskrivDagsorden(listBox4, "Lokale 4", dateTimePickerDato.Value.Date);
+        }
+        private void udskrivDagsorden(ListBox liste, string lokale, DateTime dato)
+        {
+            List<Reservation> LokListe = (List<Reservation>)liste.DataSource;
+            List<string> reseroversigt = new List<string>();
+            foreach (Reservation res in LokListe)
+            {
+                reseroversigt.Add(string.Format("Tid: {0} - {1}, {2}", res.starttid.TimeOfDay, res.Patient.efternavn, res.Patient.fornavn));
+                reseroversigt.Add(string.Format("Beskrivelse: {0}", res.behandling));
+                reseroversigt.Add(string.Format(""));
+            }
+
+            try
+            {
+                string filsti = string.Format("C:\\Smil\\{0} - {1}.txt", lokale, dato.ToShortDateString());
+                File.WriteAllLines(filsti, reseroversigt);
+            }
+            catch (NotSupportedException e)
+            {
+
+                Console.WriteLine("----------------------------");
+                Console.WriteLine(e);
+                Console.WriteLine("----------------------------");
+                Console.WriteLine(string.Format("C:\\Smil\\{0} - {1}.txt", lokale, dato.ToShortDateString()));
+            }
         }
     }
 }

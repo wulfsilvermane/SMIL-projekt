@@ -51,6 +51,10 @@
             this.textEfternavn = new System.Windows.Forms.TextBox();
             this.textCprNummer = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonLok1Udskriv = new System.Windows.Forms.Button();
+            this.buttonLok2Udskriv = new System.Windows.Forms.Button();
+            this.buttonLok3Udskriv = new System.Windows.Forms.Button();
+            this.buttonLok4Udskriv = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -382,11 +386,55 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Patient";
             // 
+            // buttonLok1Udskriv
+            // 
+            this.buttonLok1Udskriv.Location = new System.Drawing.Point(314, 26);
+            this.buttonLok1Udskriv.Name = "buttonLok1Udskriv";
+            this.buttonLok1Udskriv.Size = new System.Drawing.Size(75, 23);
+            this.buttonLok1Udskriv.TabIndex = 65;
+            this.buttonLok1Udskriv.Text = "Udskriv";
+            this.buttonLok1Udskriv.UseVisualStyleBackColor = true;
+            this.buttonLok1Udskriv.Click += new System.EventHandler(this.buttonLok1Udskriv_Click);
+            // 
+            // buttonLok2Udskriv
+            // 
+            this.buttonLok2Udskriv.Location = new System.Drawing.Point(520, 26);
+            this.buttonLok2Udskriv.Name = "buttonLok2Udskriv";
+            this.buttonLok2Udskriv.Size = new System.Drawing.Size(75, 23);
+            this.buttonLok2Udskriv.TabIndex = 66;
+            this.buttonLok2Udskriv.Text = "Udskriv";
+            this.buttonLok2Udskriv.UseVisualStyleBackColor = true;
+            this.buttonLok2Udskriv.Click += new System.EventHandler(this.buttonLok2Udskriv_Click);
+            // 
+            // buttonLok3Udskriv
+            // 
+            this.buttonLok3Udskriv.Location = new System.Drawing.Point(726, 26);
+            this.buttonLok3Udskriv.Name = "buttonLok3Udskriv";
+            this.buttonLok3Udskriv.Size = new System.Drawing.Size(75, 23);
+            this.buttonLok3Udskriv.TabIndex = 67;
+            this.buttonLok3Udskriv.Text = "Udskriv";
+            this.buttonLok3Udskriv.UseVisualStyleBackColor = true;
+            this.buttonLok3Udskriv.Click += new System.EventHandler(this.buttonLok3Udskriv_Click);
+            // 
+            // buttonLok4Udskriv
+            // 
+            this.buttonLok4Udskriv.Location = new System.Drawing.Point(932, 26);
+            this.buttonLok4Udskriv.Name = "buttonLok4Udskriv";
+            this.buttonLok4Udskriv.Size = new System.Drawing.Size(75, 23);
+            this.buttonLok4Udskriv.TabIndex = 68;
+            this.buttonLok4Udskriv.Text = "Udskriv";
+            this.buttonLok4Udskriv.UseVisualStyleBackColor = true;
+            this.buttonLok4Udskriv.Click += new System.EventHandler(this.buttonLok4Udskriv_Click);
+            // 
             // Reservering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1017, 367);
+            this.Controls.Add(this.buttonLok4Udskriv);
+            this.Controls.Add(this.buttonLok3Udskriv);
+            this.Controls.Add(this.buttonLok2Udskriv);
+            this.Controls.Add(this.buttonLok1Udskriv);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -437,5 +485,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dateTimePickerTid;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button buttonLok1Udskriv;
+        private System.Windows.Forms.Button buttonLok2Udskriv;
+        private System.Windows.Forms.Button buttonLok3Udskriv;
+        private System.Windows.Forms.Button buttonLok4Udskriv;
     }
 }
