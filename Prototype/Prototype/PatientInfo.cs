@@ -164,6 +164,8 @@ namespace Prototype
                 txtPatientId.Text = patient.patientid.ToString();
                 txtBemærkninger.Text = patient.bemærkninger;
                 txtCprNummer.Text = patient.cprnummer;
+                behandlinger = SQLkommandoer.HentPatientBehandlinger(patient);
+                listBox1.DataSource = behandlinger;
             }
 
             // Når alt er klar, så enabler vi checkboksen.
@@ -298,7 +300,7 @@ namespace Prototype
 
         private void buttonOpretBehandling_Click(object sender, EventArgs e)
         {
-            SQLkommandoer.OpretBehandling(patient, "test");
+            SQLkommandoer.OpretBehandling(patient, textBehandlingtekst.Text);
             /*OpretBehandling rf = new OpretBehandling();
             rf.Show();*/
         }

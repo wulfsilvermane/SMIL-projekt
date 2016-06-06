@@ -13,15 +13,15 @@ namespace Prototype
         public Patient Patient;
         public DateTime startdato;
         public DateTime starttid;
-
-        public Reservation(Patient patient , DateTime dato, DateTime tid, int Lokale)
+        public string behandling;
+        public Reservation(Patient patient , DateTime dato, DateTime tid, int Lokale)//Bruges til oprettelse af reservation
         {
             Patient = patient;
             startdato = dato;
             starttid = tid;
             lokaleid = Lokale;
         }
-        public Reservation(int resid, DateTime dato, int LokaleID,string fnavn, string enavn)
+        public Reservation(int resid, DateTime dato, int LokaleID,string fnavn, string enavn, string tekst)//Bruges når reservationer skal hentes
         {
             id = resid;
             starttid = dato;
@@ -29,13 +29,11 @@ namespace Prototype
             Patient.efternavn = enavn;
             Patient.fornavn = fnavn;
             lokaleid = LokaleID;
+            behandling = tekst;
         }
         public override string ToString()
         {
-            if (id == -1)
-                return String.Format("{0} - <tom>\\n\\n", starttid);
-            else
-                return String.Format("{0} - {3}-{1}-{2}", starttid,Patient.efternavn,lokaleid,id);
+            return String.Format("{0} -{1} : {2}", starttid.TimeOfDay,Patient.efternavn,behandling);
         }
     }
 }

@@ -78,8 +78,8 @@ namespace Prototype
 
         private void buttonReserverTid_Click(object sender, EventArgs e)
         {
-            reservation = new Reservation(patient,dateTimePickerDato.Value, dateTimePickerTid.Value,1);
-            SQLkommandoer.NyReservation(reservation,behandling,lokale);
+            reservation = new Reservation(patient,dateTimePickerDato.Value, dateTimePickerTid.Value,lokale);
+            SQLkommandoer.NyReservation(reservation,behandling,lokale,Convert.ToInt32(numericUpDown1.Value));
         }
 
         private void radioLok1_CheckedChanged(object sender, EventArgs e)

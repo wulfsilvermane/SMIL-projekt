@@ -144,31 +144,25 @@ namespace Prototype
                         reader.GetDateTime(1),//dato
                         reader.GetInt32(3),//lokale navn
                         reader.GetString(4),//fornavn
-                        reader.GetString(5)//efternavn
+                        reader.GetString(5),//efternavn
+                        reader.GetString(2)//behandling
                         ));
-                /*      res.Add(new Reservation(reader.GetInt32(0),//Res ID
-                        reader.GetDateTime(1),//dato
-                        reader.GetDateTime(2),//tid
-                        reader.GetString(4),//lokale navn
-                        reader.GetString(5),//fornavn
-                        reader.GetString(6)//efternavn
-                        ));
-                        */
             }
             conn.Close();
             return res;
         }
-        public static void NyReservation(Reservation reservation,Behandling behandling, int lokaleID)
+        public static void NyReservation(Reservation reservation,Behandling behandling, int lokaleID, int længde)
         {
             SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
             SqlCommand Command = new SqlCommand();
             Command.Connection = conn;
             Command.CommandText = "SPopretReservation";
             Command.CommandType = CommandType.StoredProcedure;
-            Command.Parameters.AddWithValue("@reservationsDato", reservation.starttid);
-            Command.Parameters.AddWithValue("@reservationstid", reservation.startdato);
+            Command.Parameters.AddWithValue("@reservationsDato", reservation.startdato);
+            Command.Parameters.AddWithValue("@reservationstid", reservation.starttid);
             Command.Parameters.AddWithValue("@lokaleID", lokaleID);
             Command.Parameters.AddWithValue("@behandlingsID", behandling.BehandlingsID);
+            Command.Parameters.AddWithValue("@reservationslængde", længde);
             conn.Open();
             Command.ExecuteNonQuery();
             conn.Close();

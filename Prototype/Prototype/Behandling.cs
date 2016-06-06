@@ -19,9 +19,5 @@ namespace Prototype
         {
                 return String.Format("ID:{0} - {1}", BehandlingsID, BehandlingsTekst);
         }
-        public Behandling returnself()
-        {
-            return this;
-        }
     }
 }
