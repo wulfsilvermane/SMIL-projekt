@@ -18,6 +18,7 @@ namespace Prototype
         private Reservation reservation;
         private Behandling behandling;
         private int lokale = 1;
+        private int speciale = 1;
         static DateTime startsøgning = DateTime.Today.AddDays(-1);
         static DateTime slutsøgning = DateTime.Today.AddDays(28);
         List<Reservation> ResListe = SQLkommandoer.HentReservation(startsøgning, slutsøgning);
@@ -141,12 +142,25 @@ namespace Prototype
             }
             catch (NotSupportedException e)
             {
-
                 Console.WriteLine("----------------------------");
                 Console.WriteLine(e);
                 Console.WriteLine("----------------------------");
-                Console.WriteLine(string.Format("C:\\Smil\\{0} - {1}.txt", lokale, dato.ToShortDateString()));
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            speciale = 1;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            speciale = 2;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            speciale = 3;
         }
     }
 }

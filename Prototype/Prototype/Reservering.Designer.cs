@@ -35,9 +35,6 @@
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.buttonReserverTid = new System.Windows.Forms.Button();
             this.radioLok1 = new System.Windows.Forms.RadioButton();
-            this.checkBoxKrone = new System.Windows.Forms.CheckBox();
-            this.checkBoxTandplejer = new System.Windows.Forms.CheckBox();
-            this.checkBoxRøntgen = new System.Windows.Forms.CheckBox();
             this.radioLok2 = new System.Windows.Forms.RadioButton();
             this.radioLok3 = new System.Windows.Forms.RadioButton();
             this.radioLok4 = new System.Windows.Forms.RadioButton();
@@ -55,6 +52,9 @@
             this.buttonLok2Udskriv = new System.Windows.Forms.Button();
             this.buttonLok3Udskriv = new System.Windows.Forms.Button();
             this.buttonLok4Udskriv = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -214,36 +214,6 @@
             this.radioLok1.UseVisualStyleBackColor = true;
             this.radioLok1.CheckedChanged += new System.EventHandler(this.radioLok1_CheckedChanged);
             // 
-            // checkBoxKrone
-            // 
-            this.checkBoxKrone.AutoSize = true;
-            this.checkBoxKrone.Location = new System.Drawing.Point(6, 19);
-            this.checkBoxKrone.Name = "checkBoxKrone";
-            this.checkBoxKrone.Size = new System.Drawing.Size(90, 17);
-            this.checkBoxKrone.TabIndex = 51;
-            this.checkBoxKrone.Text = "Krone Fræser";
-            this.checkBoxKrone.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTandplejer
-            // 
-            this.checkBoxTandplejer.AutoSize = true;
-            this.checkBoxTandplejer.Location = new System.Drawing.Point(6, 42);
-            this.checkBoxTandplejer.Name = "checkBoxTandplejer";
-            this.checkBoxTandplejer.Size = new System.Drawing.Size(76, 17);
-            this.checkBoxTandplejer.TabIndex = 52;
-            this.checkBoxTandplejer.Text = "Tandplejer";
-            this.checkBoxTandplejer.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxRøntgen
-            // 
-            this.checkBoxRøntgen.AutoSize = true;
-            this.checkBoxRøntgen.Location = new System.Drawing.Point(6, 65);
-            this.checkBoxRøntgen.Name = "checkBoxRøntgen";
-            this.checkBoxRøntgen.Size = new System.Drawing.Size(67, 17);
-            this.checkBoxRøntgen.TabIndex = 53;
-            this.checkBoxRøntgen.Text = "Røntgen";
-            this.checkBoxRøntgen.UseVisualStyleBackColor = true;
-            // 
             // radioLok2
             // 
             this.radioLok2.AutoSize = true;
@@ -285,9 +255,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBoxKrone);
-            this.groupBox1.Controls.Add(this.checkBoxTandplejer);
-            this.groupBox1.Controls.Add(this.checkBoxRøntgen);
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Location = new System.Drawing.Point(12, 240);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(171, 86);
@@ -426,6 +396,42 @@
             this.buttonLok4Udskriv.UseVisualStyleBackColor = true;
             this.buttonLok4Udskriv.Click += new System.EventHandler(this.buttonLok4Udskriv_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 19);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 42);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 65);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(85, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
             // Reservering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,9 +475,6 @@
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.Button buttonReserverTid;
         private System.Windows.Forms.RadioButton radioLok1;
-        private System.Windows.Forms.CheckBox checkBoxKrone;
-        private System.Windows.Forms.CheckBox checkBoxTandplejer;
-        private System.Windows.Forms.CheckBox checkBoxRøntgen;
         private System.Windows.Forms.RadioButton radioLok2;
         private System.Windows.Forms.RadioButton radioLok3;
         private System.Windows.Forms.RadioButton radioLok4;
@@ -489,5 +492,8 @@
         private System.Windows.Forms.Button buttonLok2Udskriv;
         private System.Windows.Forms.Button buttonLok3Udskriv;
         private System.Windows.Forms.Button buttonLok4Udskriv;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
