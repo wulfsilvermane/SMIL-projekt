@@ -28,5 +28,11 @@ namespace Prototype
             Reservering reservering = new Reservering();
             reservering.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Behandlinger behandlinger = new Behandlinger();
+            behandlinger.Show();
+        }
     }
 }
