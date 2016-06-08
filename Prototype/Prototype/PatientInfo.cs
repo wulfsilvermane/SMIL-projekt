@@ -83,7 +83,6 @@ namespace Prototype
 
             // Bare rolig, intet er forsvundet...
             // koden til at hente patient og replace tekstbokse er lidt længere nede her (pga flow)
-
             // Først, check om vi er i gang med at ændre på en ny patient
             if (opretNyPatient)
             {
@@ -166,6 +165,7 @@ namespace Prototype
                 txtCprNummer.Text = patient.cprnummer;
                 behandlinger = SQLkommandoer.HentPatientBehandlinger(patient);
                 listBox1.DataSource = behandlinger;
+                buttonOpretBehandling.Enabled = true;
             }
 
             // Når alt er klar, så enabler vi checkboksen.
@@ -301,8 +301,8 @@ namespace Prototype
         private void buttonOpretBehandling_Click(object sender, EventArgs e)
         {
             SQLkommandoer.OpretBehandling(patient, textBehandlingtekst.Text);
-            /*OpretBehandling rf = new OpretBehandling();
-            rf.Show();*/
+            behandlinger = SQLkommandoer.HentPatientBehandlinger(patient);
+            listBox1.DataSource = behandlinger;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

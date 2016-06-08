@@ -16,8 +16,9 @@ namespace Prototype
         public int længde;
         public string behandling;
         public string special;
+        public string medarbejder;
 
-        public Reservation(Patient patient , DateTime dato, DateTime tid, int Lokale, int længde, string special)//Bruges til oprettelse af reservation
+        public Reservation(Patient patient , DateTime dato, DateTime tid, int Lokale, int længde,string special)//Bruges til oprettelse af reservation
         {
             Patient = patient;
             startdato = dato;
@@ -26,7 +27,7 @@ namespace Prototype
             this.længde = længde;
             this.special = special;
         }
-        public Reservation(int resid, DateTime dato, int LokaleID,string fnavn, string enavn, string tekst, int længde)//Bruges når reservationer skal hentes
+        public Reservation(int resid, DateTime dato, int LokaleID,string fnavn, string enavn, string tekst, int længde, string medarbejder)//Bruges når reservationer skal hentes
         {
             id = resid;
             starttid = dato;
@@ -37,8 +38,9 @@ namespace Prototype
             behandling = tekst;
             special = "ingen";
             this.længde = længde;
+            this.medarbejder = medarbejder;
         }
-        public Reservation(int resid, DateTime dato, int LokaleID, string fnavn, string enavn, string tekst, string special, int længde)//Bruges når reservationer skal hentes
+        public Reservation(int resid, DateTime dato, int LokaleID, string fnavn, string enavn, string tekst, string special, int længde, string medarbejder)//Bruges når reservationer skal hentes
         {
             id = resid;
             starttid = dato;
@@ -49,10 +51,14 @@ namespace Prototype
             behandling = tekst;
             this.special = special;
             this.længde = længde;
+            this.medarbejder = medarbejder;
         }
         public override string ToString()
         {
-            return String.Format("{0} -{1} : {2}", starttid.TimeOfDay,Patient.efternavn,behandling);
+            if (special=="ingen")
+            return String.Format("{0}-{1} -{2} : {3}", starttid.TimeOfDay, starttid.AddMinutes(længde).TimeOfDay, Patient.efternavn,behandling);
+            else
+            return String.Format("{0}-{1} -{2} :--{3}-- {4}", starttid.TimeOfDay, starttid.AddMinutes(længde).TimeOfDay, Patient.efternavn,special, behandling);
         }
     }
 }

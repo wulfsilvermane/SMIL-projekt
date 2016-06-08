@@ -50,6 +50,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnSøg = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBehandlingtekst = new System.Windows.Forms.TextBox();
             this.buttonOpretBehandling = new System.Windows.Forms.Button();
             this.buttonOpretReservation = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -67,7 +68,6 @@
             this.txtCprNummer = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.buttonFindBehandlinger = new System.Windows.Forms.Button();
-            this.textBehandlingtekst = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -278,8 +278,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reservationer";
             // 
+            // textBehandlingtekst
+            // 
+            this.textBehandlingtekst.Location = new System.Drawing.Point(6, 378);
+            this.textBehandlingtekst.Multiline = true;
+            this.textBehandlingtekst.Name = "textBehandlingtekst";
+            this.textBehandlingtekst.Size = new System.Drawing.Size(439, 59);
+            this.textBehandlingtekst.TabIndex = 29;
+            // 
             // buttonOpretBehandling
             // 
+            this.buttonOpretBehandling.Enabled = false;
             this.buttonOpretBehandling.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOpretBehandling.Location = new System.Drawing.Point(6, 329);
             this.buttonOpretBehandling.Name = "buttonOpretBehandling";
@@ -331,7 +340,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(431, 243);
+            this.tabPage2.Size = new System.Drawing.Size(431, 215);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Afsluttede behandlinger";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -482,14 +491,6 @@
             this.buttonFindBehandlinger.Text = "<debug>Find behandlinger";
             this.buttonFindBehandlinger.UseVisualStyleBackColor = true;
             this.buttonFindBehandlinger.Click += new System.EventHandler(this.buttonFindBehandlinger_Click);
-            // 
-            // textBehandlingtekst
-            // 
-            this.textBehandlingtekst.Location = new System.Drawing.Point(6, 378);
-            this.textBehandlingtekst.Multiline = true;
-            this.textBehandlingtekst.Name = "textBehandlingtekst";
-            this.textBehandlingtekst.Size = new System.Drawing.Size(439, 59);
-            this.textBehandlingtekst.TabIndex = 29;
             // 
             // PatientInfo
             // 

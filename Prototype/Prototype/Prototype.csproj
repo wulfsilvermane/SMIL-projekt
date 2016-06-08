@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ansat.cs" />
     <Compile Include="Behandling.cs" />
     <Compile Include="Behandlinger.cs">
       <SubType>Form</SubType>

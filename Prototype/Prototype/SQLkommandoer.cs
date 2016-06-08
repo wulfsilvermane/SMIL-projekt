@@ -87,7 +87,7 @@ namespace Prototype
             Command.Parameters.AddWithValue("@mobil",patient.mobil);
             Command.Parameters.AddWithValue("@email",patient.email);
             Command.Parameters.AddWithValue("@noter",patient.bemærkninger);
-            Command.Parameters.AddWithValue("@sikringsGruppe", "1"); // MIDLERTIDIG
+            Command.Parameters.AddWithValue("@sikringsGruppe", "1"); //Hardcoded, ingen support for sikrings gruppe i nuværende version
             conn.Open();
             Command.ExecuteNonQuery();
             conn.Close();
@@ -149,7 +149,8 @@ namespace Prototype
                         reader.GetString(5),//efternavn
                         reader.GetString(2),//behandling
                         reader.GetString(6),//speciale
-                        reader.GetInt32(7)//Længde
+                        reader.GetInt32(7),//Længde
+                        reader.GetString(8)//Medarbejder navn
                         ));
                     else
                         res.Add(new Reservation(reader.GetInt32(0),//Res ID
@@ -158,7 +159,8 @@ namespace Prototype
                         reader.GetString(4),//fornavn
                         reader.GetString(5),//efternavn
                         reader.GetString(2),//behandling
-                        reader.GetInt32(7)//Længde
+                        reader.GetInt32(7),//Længde
+                        reader.GetString(8)//Medarbejder navn
                         ));
                 }
             }

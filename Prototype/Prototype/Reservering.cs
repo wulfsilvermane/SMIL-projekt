@@ -23,11 +23,7 @@ namespace Prototype
         static DateTime startsøgning = DateTime.Today.AddDays(-1);
         static DateTime slutsøgning = DateTime.Today.AddDays(28);
         List<Reservation> ResListe = SQLkommandoer.HentReservation(startsøgning, slutsøgning);
-        List<Reservation> Lok1Res = new List<Reservation>();
-        List<Reservation> Lok2Res = new List<Reservation>();
-        List<Reservation> Lok3Res = new List<Reservation>();
-        List<Reservation> Lok4Res = new List<Reservation>();
-
+        
         public Reservering()
         {
             InitializeComponent();
@@ -58,7 +54,7 @@ namespace Prototype
             listBox3.DataSource = DagsDato(3);
             listBox4.DataSource = DagsDato(4);
         }
-        private List<Reservation> DagsDato(int lokale)
+        private List<Reservation> DagsDato(int lokale) //Udvælger de reservationer der har tider idag, filtre fra på lokale også, og returnere det som en liste
         {
             List<Reservation> reslist = new List<Reservation>();
             for (int i = ResListe.Count-1; i >= 0; i--)
@@ -82,8 +78,12 @@ namespace Prototype
         private void buttonReserverTid_Click(object sender, EventArgs e)
         {
             reservation = new Reservation(patient,dateTimePickerDato.Value, dateTimePickerTid.Value,lokale, Convert.ToInt32(numericUpDown1.Value),specialetekst);
-            if (gyldigReservation(reservation,ResListe))
-            SQLkommandoer.NyReservation(reservation,behandling,speciale);
+            if (gyldigReservation(reservation, ResListe))
+            {
+                SQLkommandoer.NyReservation(reservation, behandling, speciale);
+                MessageBox.Show("Reservation udført og gemt", "Udført", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
         private void radioLok1_CheckedChanged(object sender, EventArgs e)
@@ -133,10 +133,10 @@ namespace Prototype
             foreach (Reservation res in LokListe)
             {
                 reseroversigt.Add(string.Format("Tid: {0} - {1}, {2}", res.starttid.TimeOfDay, res.Patient.efternavn, res.Patient.fornavn));
+                reseroversigt.Add(string.Format("Medarbejder: {0} - {1,35}", res.medarbejder, res.special));
                 reseroversigt.Add(string.Format("Beskrivelse: {0}", res.behandling));
                 reseroversigt.Add(string.Format(""));
             }
-
             try
             {
                 string filsti = string.Format("C:\\Smil\\{0} - {1}.txt", lokale, dato.ToShortDateString());
@@ -179,14 +179,15 @@ namespace Prototype
             foreach (Reservation res in gammel)
             {
                 if (ny.lokaleid == res.lokaleid)//Tidstjek skal kun køres på de reservationer der har samme lokale som den nye.
+                    if (ny.startdato.DayOfYear == res.startdato.DayOfYear)//Tjekker at den nye tid og de tider der sammenlignes med er på samme dag
                     if (gyldigTid(ny.starttid, res.starttid, res.starttid.AddMinutes(res.længde)) &&
-                        gyldigTid(ny.starttid.AddMinutes(ny.længde), res.starttid, res.starttid.AddMinutes(res.længde)))
-                        ;
+                        gyldigTid(ny.starttid.AddMinutes(ny.længde), res.starttid, res.starttid.AddMinutes(res.længde)))//Den reelle tjekkning af tid. Se nedenstående metode- Hvis begge er true, ligge både slut og start uden for mellemrummet mellem start og slut i den nye tid
+                        ;// Skal være tom, for at if statement ingenting gør. Det er kun hvis begge tider, start og slut, er ugyldige, at der skal ske noget, som sker i else
                     else {
                         MessageBox.Show("Den valgte tid er i konflikt med en eksisterende reservation for lokalet. Prøv venligst igen.", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false; }                    
             }
-            if (ny.special != "ingen")//Hvis der ikke er noget speciale i den ny reservation skal der ikke tjekkes for om det matcher
+            if (ny.special != "ingen")//Hvis der ikke er noget speciale i den nye reservation skal der ikke tjekkes for om det matcher
             foreach (Reservation res in gammel)//speciale tjek
                 {
                     if (!gyldigTid(ny.starttid, res.starttid, res.starttid.AddMinutes(res.længde)) ||
@@ -199,7 +200,7 @@ namespace Prototype
                 }
                 return true;
         }
-        private bool gyldigTid(DateTime ny, DateTime gammelstart, DateTime gammelslut)
+        private bool gyldigTid(DateTime ny, DateTime gammelstart, DateTime gammelslut)//En simpel tjek for om en date time ligger uden for mellem rummet for to andre tider
         {
             if (ny > gammelstart && ny > gammelslut)
                 return true;

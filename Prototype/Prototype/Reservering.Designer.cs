@@ -97,7 +97,7 @@
             "17:00: "});
             this.listBox1.Location = new System.Drawing.Point(189, 56);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(200, 303);
+            this.listBox1.Size = new System.Drawing.Size(250, 303);
             this.listBox1.TabIndex = 32;
             // 
             // listBox2
@@ -125,9 +125,9 @@
             "16:00: ",
             "16:30: ",
             "17:00: "});
-            this.listBox2.Location = new System.Drawing.Point(395, 56);
+            this.listBox2.Location = new System.Drawing.Point(445, 56);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(200, 303);
+            this.listBox2.Size = new System.Drawing.Size(250, 303);
             this.listBox2.TabIndex = 40;
             // 
             // listBox3
@@ -155,9 +155,9 @@
             "16:00: ",
             "16:30: ",
             "17:00: "});
-            this.listBox3.Location = new System.Drawing.Point(601, 56);
+            this.listBox3.Location = new System.Drawing.Point(701, 56);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(200, 303);
+            this.listBox3.Size = new System.Drawing.Size(250, 303);
             this.listBox3.TabIndex = 41;
             // 
             // listBox4
@@ -185,9 +185,9 @@
             "16:00: ",
             "16:30: ",
             "17:00: "});
-            this.listBox4.Location = new System.Drawing.Point(807, 56);
+            this.listBox4.Location = new System.Drawing.Point(957, 56);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(200, 303);
+            this.listBox4.Size = new System.Drawing.Size(250, 303);
             this.listBox4.TabIndex = 42;
             // 
             // buttonReserverTid
@@ -219,7 +219,7 @@
             // 
             this.radioLok2.AutoSize = true;
             this.radioLok2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioLok2.Location = new System.Drawing.Point(395, 26);
+            this.radioLok2.Location = new System.Drawing.Point(445, 26);
             this.radioLok2.Name = "radioLok2";
             this.radioLok2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioLok2.Size = new System.Drawing.Size(87, 24);
@@ -232,7 +232,7 @@
             // 
             this.radioLok3.AutoSize = true;
             this.radioLok3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioLok3.Location = new System.Drawing.Point(601, 26);
+            this.radioLok3.Location = new System.Drawing.Point(701, 26);
             this.radioLok3.Name = "radioLok3";
             this.radioLok3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioLok3.Size = new System.Drawing.Size(87, 24);
@@ -245,7 +245,7 @@
             // 
             this.radioLok4.AutoSize = true;
             this.radioLok4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioLok4.Location = new System.Drawing.Point(807, 27);
+            this.radioLok4.Location = new System.Drawing.Point(957, 27);
             this.radioLok4.Name = "radioLok4";
             this.radioLok4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioLok4.Size = new System.Drawing.Size(87, 24);
@@ -416,7 +416,7 @@
             // 
             // buttonLok2Udskriv
             // 
-            this.buttonLok2Udskriv.Location = new System.Drawing.Point(520, 26);
+            this.buttonLok2Udskriv.Location = new System.Drawing.Point(570, 26);
             this.buttonLok2Udskriv.Name = "buttonLok2Udskriv";
             this.buttonLok2Udskriv.Size = new System.Drawing.Size(75, 23);
             this.buttonLok2Udskriv.TabIndex = 66;
@@ -426,7 +426,7 @@
             // 
             // buttonLok3Udskriv
             // 
-            this.buttonLok3Udskriv.Location = new System.Drawing.Point(726, 26);
+            this.buttonLok3Udskriv.Location = new System.Drawing.Point(826, 26);
             this.buttonLok3Udskriv.Name = "buttonLok3Udskriv";
             this.buttonLok3Udskriv.Size = new System.Drawing.Size(75, 23);
             this.buttonLok3Udskriv.TabIndex = 67;
@@ -436,7 +436,7 @@
             // 
             // buttonLok4Udskriv
             // 
-            this.buttonLok4Udskriv.Location = new System.Drawing.Point(932, 26);
+            this.buttonLok4Udskriv.Location = new System.Drawing.Point(1082, 26);
             this.buttonLok4Udskriv.Name = "buttonLok4Udskriv";
             this.buttonLok4Udskriv.Size = new System.Drawing.Size(75, 23);
             this.buttonLok4Udskriv.TabIndex = 68;
@@ -448,7 +448,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 367);
+            this.ClientSize = new System.Drawing.Size(1221, 367);
             this.Controls.Add(this.buttonLok4Udskriv);
             this.Controls.Add(this.buttonLok3Udskriv);
             this.Controls.Add(this.buttonLok2Udskriv);
