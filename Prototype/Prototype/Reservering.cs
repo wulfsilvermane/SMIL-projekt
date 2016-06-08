@@ -18,7 +18,8 @@ namespace Prototype
         private Reservation reservation;
         private Behandling behandling;
         private int lokale = 1;
-        private int speciale = 1;
+        private int speciale = 0;
+        private string specialetekst = "ingen";
         static DateTime startsøgning = DateTime.Today.AddDays(-1);
         static DateTime slutsøgning = DateTime.Today.AddDays(28);
         List<Reservation> ResListe = SQLkommandoer.HentReservation(startsøgning, slutsøgning);
@@ -80,8 +81,9 @@ namespace Prototype
 
         private void buttonReserverTid_Click(object sender, EventArgs e)
         {
-            reservation = new Reservation(patient,dateTimePickerDato.Value, dateTimePickerTid.Value,lokale);
-            SQLkommandoer.NyReservation(reservation,behandling,lokale,Convert.ToInt32(numericUpDown1.Value));
+            reservation = new Reservation(patient,dateTimePickerDato.Value, dateTimePickerTid.Value,lokale, Convert.ToInt32(numericUpDown1.Value),specialetekst);
+            if (gyldigReservation(reservation,ResListe))
+            SQLkommandoer.NyReservation(reservation,behandling,speciale);
         }
 
         private void radioLok1_CheckedChanged(object sender, EventArgs e)
@@ -148,19 +150,62 @@ namespace Prototype
             }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonAkupunktur_CheckedChanged(object sender, EventArgs e)
         {
             speciale = 1;
+            specialetekst = "Akupunktur";
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonKronefræser_CheckedChanged(object sender, EventArgs e)
         {
             speciale = 2;
+            specialetekst = "Kronefræser";
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonRøntgen_CheckedChanged(object sender, EventArgs e)
         {
             speciale = 3;
+            specialetekst = "Røntgen";
+        }
+
+        private void radioButtonIngen_CheckedChanged(object sender, EventArgs e)
+        {
+            speciale = 0;
+            specialetekst = "ingen";
+        }
+        private bool gyldigReservation(Reservation ny, List<Reservation> gammel)
+        {
+            //tids tjek
+            foreach (Reservation res in gammel)
+            {
+                if (ny.lokaleid == res.lokaleid)//Tidstjek skal kun køres på de reservationer der har samme lokale som den nye.
+                    if (gyldigTid(ny.starttid, res.starttid, res.starttid.AddMinutes(res.længde)) &&
+                        gyldigTid(ny.starttid.AddMinutes(ny.længde), res.starttid, res.starttid.AddMinutes(res.længde)))
+                        ;
+                    else {
+                        MessageBox.Show("Den valgte tid er i konflikt med en eksisterende reservation for lokalet. Prøv venligst igen.", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false; }                    
+            }
+            if (ny.special != "ingen")//Hvis der ikke er noget speciale i den ny reservation skal der ikke tjekkes for om det matcher
+            foreach (Reservation res in gammel)//speciale tjek
+                {
+                    if (!gyldigTid(ny.starttid, res.starttid, res.starttid.AddMinutes(res.længde)) ||
+                        !gyldigTid(ny.starttid.AddMinutes(ny.længde), res.starttid, res.starttid.AddMinutes(res.længde)))
+                        if (ny.special == res.special)
+                        {
+                            MessageBox.Show("Den valgte speciale er reserveret til dette tidspunkt. Prøv en anden tid.", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                }
+                return true;
+        }
+        private bool gyldigTid(DateTime ny, DateTime gammelstart, DateTime gammelslut)
+        {
+            if (ny > gammelstart && ny > gammelslut)
+                return true;
+            else if (ny < gammelstart && ny < gammelslut)
+                return true;
+            else return false;
         }
     }
 }

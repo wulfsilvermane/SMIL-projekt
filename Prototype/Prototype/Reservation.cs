@@ -13,15 +13,20 @@ namespace Prototype
         public Patient Patient;
         public DateTime startdato;
         public DateTime starttid;
+        public int længde;
         public string behandling;
-        public Reservation(Patient patient , DateTime dato, DateTime tid, int Lokale)//Bruges til oprettelse af reservation
+        public string special;
+
+        public Reservation(Patient patient , DateTime dato, DateTime tid, int Lokale, int længde, string special)//Bruges til oprettelse af reservation
         {
             Patient = patient;
             startdato = dato;
             starttid = tid;
             lokaleid = Lokale;
+            this.længde = længde;
+            this.special = special;
         }
-        public Reservation(int resid, DateTime dato, int LokaleID,string fnavn, string enavn, string tekst)//Bruges når reservationer skal hentes
+        public Reservation(int resid, DateTime dato, int LokaleID,string fnavn, string enavn, string tekst, int længde)//Bruges når reservationer skal hentes
         {
             id = resid;
             starttid = dato;
@@ -30,6 +35,20 @@ namespace Prototype
             Patient.fornavn = fnavn;
             lokaleid = LokaleID;
             behandling = tekst;
+            special = "ingen";
+            this.længde = længde;
+        }
+        public Reservation(int resid, DateTime dato, int LokaleID, string fnavn, string enavn, string tekst, string special, int længde)//Bruges når reservationer skal hentes
+        {
+            id = resid;
+            starttid = dato;
+            Patient = new Patient();
+            Patient.efternavn = enavn;
+            Patient.fornavn = fnavn;
+            lokaleid = LokaleID;
+            behandling = tekst;
+            this.special = special;
+            this.længde = længde;
         }
         public override string ToString()
         {

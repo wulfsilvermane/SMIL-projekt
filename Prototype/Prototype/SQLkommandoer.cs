@@ -140,18 +140,32 @@ namespace Prototype
             using (SqlDataReader reader = Command.ExecuteReader())
             {
                 while (reader.Read())
+                {
+                    if (!reader.IsDBNull(6))
                     res.Add(new Reservation(reader.GetInt32(0),//Res ID
                         reader.GetDateTime(1),//dato
                         reader.GetInt32(3),//lokale navn
                         reader.GetString(4),//fornavn
                         reader.GetString(5),//efternavn
-                        reader.GetString(2)//behandling
+                        reader.GetString(2),//behandling
+                        reader.GetString(6),//speciale
+                        reader.GetInt32(7)//Længde
                         ));
+                    else
+                        res.Add(new Reservation(reader.GetInt32(0),//Res ID
+                        reader.GetDateTime(1),//dato
+                        reader.GetInt32(3),//lokale navn
+                        reader.GetString(4),//fornavn
+                        reader.GetString(5),//efternavn
+                        reader.GetString(2),//behandling
+                        reader.GetInt32(7)//Længde
+                        ));
+                }
             }
             conn.Close();
             return res;
         }
-        public static void NyReservation(Reservation reservation,Behandling behandling, int lokaleID, int længde)
+        public static void NyReservation(Reservation reservation,Behandling behandling, int special)
         {
             SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
             SqlCommand Command = new SqlCommand();
@@ -160,9 +174,10 @@ namespace Prototype
             Command.CommandType = CommandType.StoredProcedure;
             Command.Parameters.AddWithValue("@reservationsDato", reservation.startdato);
             Command.Parameters.AddWithValue("@reservationstid", reservation.starttid);
-            Command.Parameters.AddWithValue("@lokaleID", lokaleID);
+            Command.Parameters.AddWithValue("@lokaleID", reservation.lokaleid);
             Command.Parameters.AddWithValue("@behandlingsID", behandling.BehandlingsID);
-            Command.Parameters.AddWithValue("@reservationslængde", længde);
+            Command.Parameters.AddWithValue("@reservationslængde", reservation.længde);
+            Command.Parameters.AddWithValue("@special", special);
             conn.Open();
             Command.ExecuteNonQuery();
             conn.Close();

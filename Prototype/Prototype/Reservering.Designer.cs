@@ -39,6 +39,10 @@
             this.radioLok3 = new System.Windows.Forms.RadioButton();
             this.radioLok4 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonIngen = new System.Windows.Forms.RadioButton();
+            this.radioButtonRøntgen = new System.Windows.Forms.RadioButton();
+            this.radioButtonKronefræser = new System.Windows.Forms.RadioButton();
+            this.radioButtonAkupunktur = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dateTimePickerTid = new System.Windows.Forms.DateTimePicker();
@@ -52,9 +56,6 @@
             this.buttonLok2Udskriv = new System.Windows.Forms.Button();
             this.buttonLok3Udskriv = new System.Windows.Forms.Button();
             this.buttonLok4Udskriv = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -191,7 +192,7 @@
             // 
             // buttonReserverTid
             // 
-            this.buttonReserverTid.Location = new System.Drawing.Point(18, 332);
+            this.buttonReserverTid.Location = new System.Drawing.Point(12, 336);
             this.buttonReserverTid.Name = "buttonReserverTid";
             this.buttonReserverTid.Size = new System.Drawing.Size(76, 23);
             this.buttonReserverTid.TabIndex = 46;
@@ -255,15 +256,62 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 240);
+            this.groupBox1.Controls.Add(this.radioButtonIngen);
+            this.groupBox1.Controls.Add(this.radioButtonRøntgen);
+            this.groupBox1.Controls.Add(this.radioButtonKronefræser);
+            this.groupBox1.Controls.Add(this.radioButtonAkupunktur);
+            this.groupBox1.Location = new System.Drawing.Point(12, 228);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(171, 86);
+            this.groupBox1.Size = new System.Drawing.Size(171, 68);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Speciale";
+            // 
+            // radioButtonIngen
+            // 
+            this.radioButtonIngen.AutoSize = true;
+            this.radioButtonIngen.Checked = true;
+            this.radioButtonIngen.Location = new System.Drawing.Point(92, 42);
+            this.radioButtonIngen.Name = "radioButtonIngen";
+            this.radioButtonIngen.Size = new System.Drawing.Size(52, 17);
+            this.radioButtonIngen.TabIndex = 3;
+            this.radioButtonIngen.TabStop = true;
+            this.radioButtonIngen.Text = "Ingen";
+            this.radioButtonIngen.UseVisualStyleBackColor = true;
+            this.radioButtonIngen.CheckedChanged += new System.EventHandler(this.radioButtonIngen_CheckedChanged);
+            // 
+            // radioButtonRøntgen
+            // 
+            this.radioButtonRøntgen.AutoSize = true;
+            this.radioButtonRøntgen.Location = new System.Drawing.Point(92, 19);
+            this.radioButtonRøntgen.Name = "radioButtonRøntgen";
+            this.radioButtonRøntgen.Size = new System.Drawing.Size(66, 17);
+            this.radioButtonRøntgen.TabIndex = 2;
+            this.radioButtonRøntgen.Text = "Røntgen";
+            this.radioButtonRøntgen.UseVisualStyleBackColor = true;
+            this.radioButtonRøntgen.CheckedChanged += new System.EventHandler(this.radioButtonRøntgen_CheckedChanged);
+            // 
+            // radioButtonKronefræser
+            // 
+            this.radioButtonKronefræser.AutoSize = true;
+            this.radioButtonKronefræser.Location = new System.Drawing.Point(6, 42);
+            this.radioButtonKronefræser.Name = "radioButtonKronefræser";
+            this.radioButtonKronefræser.Size = new System.Drawing.Size(83, 17);
+            this.radioButtonKronefræser.TabIndex = 1;
+            this.radioButtonKronefræser.Text = "Kronefræser";
+            this.radioButtonKronefræser.UseVisualStyleBackColor = true;
+            this.radioButtonKronefræser.CheckedChanged += new System.EventHandler(this.radioButtonKronefræser_CheckedChanged);
+            // 
+            // radioButtonAkupunktur
+            // 
+            this.radioButtonAkupunktur.AutoSize = true;
+            this.radioButtonAkupunktur.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonAkupunktur.Name = "radioButtonAkupunktur";
+            this.radioButtonAkupunktur.Size = new System.Drawing.Size(80, 17);
+            this.radioButtonAkupunktur.TabIndex = 0;
+            this.radioButtonAkupunktur.Text = "Akupunktur";
+            this.radioButtonAkupunktur.UseVisualStyleBackColor = true;
+            this.radioButtonAkupunktur.CheckedChanged += new System.EventHandler(this.radioButtonAkupunktur_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -272,7 +320,7 @@
             this.groupBox2.Controls.Add(this.buttonForrigedag);
             this.groupBox2.Controls.Add(this.buttonNæstedag);
             this.groupBox2.Controls.Add(this.dateTimePickerDato);
-            this.groupBox2.Location = new System.Drawing.Point(12, 131);
+            this.groupBox2.Location = new System.Drawing.Point(12, 119);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(171, 103);
             this.groupBox2.TabIndex = 60;
@@ -396,42 +444,6 @@
             this.buttonLok4Udskriv.UseVisualStyleBackColor = true;
             this.buttonLok4Udskriv.Click += new System.EventHandler(this.buttonLok4Udskriv_Click);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 65);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
             // Reservering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,8 +504,9 @@
         private System.Windows.Forms.Button buttonLok2Udskriv;
         private System.Windows.Forms.Button buttonLok3Udskriv;
         private System.Windows.Forms.Button buttonLok4Udskriv;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonRøntgen;
+        private System.Windows.Forms.RadioButton radioButtonKronefræser;
+        private System.Windows.Forms.RadioButton radioButtonAkupunktur;
+        private System.Windows.Forms.RadioButton radioButtonIngen;
     }
 }
