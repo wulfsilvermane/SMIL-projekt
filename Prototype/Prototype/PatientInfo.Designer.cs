@@ -50,6 +50,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnSøg = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonOpretBehandling = new System.Windows.Forms.Button();
+            this.buttonOpretReservation = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -64,7 +66,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtCprNummer = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonFindBehandlinger = new System.Windows.Forms.Button();
+            this.textBehandlingtekst = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -203,8 +206,9 @@
             this.listBox1.Location = new System.Drawing.Point(6, 6);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(419, 342);
+            this.listBox1.Size = new System.Drawing.Size(419, 199);
             this.listBox1.TabIndex = 15;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // txtPatientId
             // 
@@ -263,7 +267,9 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.textBehandlingtekst);
+            this.groupBox1.Controls.Add(this.buttonOpretBehandling);
+            this.groupBox1.Controls.Add(this.buttonOpretReservation);
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(382, 48);
             this.groupBox1.Name = "groupBox1";
@@ -271,6 +277,29 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reservationer";
+            // 
+            // buttonOpretBehandling
+            // 
+            this.buttonOpretBehandling.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpretBehandling.Location = new System.Drawing.Point(6, 329);
+            this.buttonOpretBehandling.Name = "buttonOpretBehandling";
+            this.buttonOpretBehandling.Size = new System.Drawing.Size(190, 34);
+            this.buttonOpretBehandling.TabIndex = 28;
+            this.buttonOpretBehandling.Text = "Opret Behandling";
+            this.buttonOpretBehandling.UseVisualStyleBackColor = true;
+            this.buttonOpretBehandling.Click += new System.EventHandler(this.buttonOpretBehandling_Click);
+            // 
+            // buttonOpretReservation
+            // 
+            this.buttonOpretReservation.Enabled = false;
+            this.buttonOpretReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpretReservation.Location = new System.Drawing.Point(6, 264);
+            this.buttonOpretReservation.Name = "buttonOpretReservation";
+            this.buttonOpretReservation.Size = new System.Drawing.Size(190, 34);
+            this.buttonOpretReservation.TabIndex = 27;
+            this.buttonOpretReservation.Text = "Opret Reservation";
+            this.buttonOpretReservation.UseVisualStyleBackColor = true;
+            this.buttonOpretReservation.Click += new System.EventHandler(this.buttonOpretReservation_Click);
             // 
             // tabControl1
             // 
@@ -282,7 +311,7 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 17);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(439, 380);
+            this.tabControl1.Size = new System.Drawing.Size(439, 241);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -291,7 +320,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(431, 354);
+            this.tabPage1.Size = new System.Drawing.Size(431, 215);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Kommende behandlinger";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -302,7 +331,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(431, 354);
+            this.tabPage2.Size = new System.Drawing.Size(431, 243);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Afsluttede behandlinger";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -444,22 +473,30 @@
             this.txtEmail.Size = new System.Drawing.Size(255, 20);
             this.txtEmail.TabIndex = 7;
             // 
-            // button1
+            // buttonFindBehandlinger
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(135, 402);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 34);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Opret Reservation";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonFindBehandlinger.Location = new System.Drawing.Point(382, 14);
+            this.buttonFindBehandlinger.Name = "buttonFindBehandlinger";
+            this.buttonFindBehandlinger.Size = new System.Drawing.Size(150, 23);
+            this.buttonFindBehandlinger.TabIndex = 27;
+            this.buttonFindBehandlinger.Text = "<debug>Find behandlinger";
+            this.buttonFindBehandlinger.UseVisualStyleBackColor = true;
+            this.buttonFindBehandlinger.Click += new System.EventHandler(this.buttonFindBehandlinger_Click);
+            // 
+            // textBehandlingtekst
+            // 
+            this.textBehandlingtekst.Location = new System.Drawing.Point(6, 378);
+            this.textBehandlingtekst.Multiline = true;
+            this.textBehandlingtekst.Name = "textBehandlingtekst";
+            this.textBehandlingtekst.Size = new System.Drawing.Size(439, 59);
+            this.textBehandlingtekst.TabIndex = 29;
             // 
             // PatientInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 543);
+            this.Controls.Add(this.buttonFindBehandlinger);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSøg);
@@ -470,6 +507,7 @@
             this.Text = "PatientInfo";
             this.Load += new System.EventHandler(this.PatientInfo_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -518,6 +556,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSletPatient;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonOpretReservation;
+        private System.Windows.Forms.Button buttonOpretBehandling;
+        private System.Windows.Forms.Button buttonFindBehandlinger;
+        private System.Windows.Forms.TextBox textBehandlingtekst;
     }
 }

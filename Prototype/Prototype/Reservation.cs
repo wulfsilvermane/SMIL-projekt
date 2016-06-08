@@ -8,35 +8,51 @@ namespace Prototype
 {
     class Reservation
     {
-        private bool færdig;
         private int id;
+        public int lokaleid;
         public Patient Patient;
-        public Lokale Lokale;
-        private DateTime starttid;
-        public Reservation() { }
-        public Reservation(DateTime tid, Lokale Lokale)
+        public DateTime startdato;
+        public DateTime starttid;
+        public int længde;
+        public string behandling;
+        public string special;
+
+        public Reservation(Patient patient , DateTime dato, DateTime tid, int Lokale, int længde, string special)//Bruges til oprettelse af reservation
         {
-            id = -1;
-            færdig = false;
-            this.Lokale = Lokale;
+            Patient = patient;
+            startdato = dato;
             starttid = tid;
+            lokaleid = Lokale;
+            this.længde = længde;
+            this.special = special;
         }
-        public Reservation(int resid, DateTime dato, string LokaleNavn,string fnavn, string enavn)
+        public Reservation(int resid, DateTime dato, int LokaleID,string fnavn, string enavn, string tekst, int længde)//Bruges når reservationer skal hentes
         {
             id = resid;
-            færdig = false;
             starttid = dato;
             Patient = new Patient();
             Patient.efternavn = enavn;
             Patient.fornavn = fnavn;
-            Lokale = new Lokale(true, LokaleNavn);
+            lokaleid = LokaleID;
+            behandling = tekst;
+            special = "ingen";
+            this.længde = længde;
+        }
+        public Reservation(int resid, DateTime dato, int LokaleID, string fnavn, string enavn, string tekst, string special, int længde)//Bruges når reservationer skal hentes
+        {
+            id = resid;
+            starttid = dato;
+            Patient = new Patient();
+            Patient.efternavn = enavn;
+            Patient.fornavn = fnavn;
+            lokaleid = LokaleID;
+            behandling = tekst;
+            this.special = special;
+            this.længde = længde;
         }
         public override string ToString()
         {
-            if (id == -1)
-                return String.Format("{0} - <tom>\\n\\n", starttid);
-            else
-                return String.Format("{0} - {3}-{1}-{2}", starttid,Patient.efternavn,Lokale.LokaleNavn,id);
+            return String.Format("{0} -{1} : {2}", starttid.TimeOfDay,Patient.efternavn,behandling);
         }
     }
 }

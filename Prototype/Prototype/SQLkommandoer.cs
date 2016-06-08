@@ -83,7 +83,7 @@ namespace Prototype
             Command.Parameters.AddWithValue("@efternavn",patient.efternavn);
             Command.Parameters.AddWithValue("@adresse",patient.adresse);
             Command.Parameters.AddWithValue("@postNr",patient.postnummer);
-            Command.Parameters.AddWithValue("@telefonr",patient.telefon);
+            Command.Parameters.AddWithValue("@telefonnr",patient.telefon);
             Command.Parameters.AddWithValue("@mobil",patient.mobil);
             Command.Parameters.AddWithValue("@email",patient.email);
             Command.Parameters.AddWithValue("@noter",patient.bemærkninger);
@@ -140,23 +140,81 @@ namespace Prototype
             using (SqlDataReader reader = Command.ExecuteReader())
             {
                 while (reader.Read())
+                {
+                    if (!reader.IsDBNull(6))
                     res.Add(new Reservation(reader.GetInt32(0),//Res ID
                         reader.GetDateTime(1),//dato
-                        reader.GetString(3),//lokale navn
+                        reader.GetInt32(3),//lokale navn
                         reader.GetString(4),//fornavn
-                        reader.GetString(5)//efternavn
+                        reader.GetString(5),//efternavn
+                        reader.GetString(2),//behandling
+                        reader.GetString(6),//speciale
+                        reader.GetInt32(7)//Længde
                         ));
-                /*      res.Add(new Reservation(reader.GetInt32(0),//Res ID
+                    else
+                        res.Add(new Reservation(reader.GetInt32(0),//Res ID
                         reader.GetDateTime(1),//dato
-                        reader.GetDateTime(2),//tid
-                        reader.GetString(4),//lokale navn
-                        reader.GetString(5),//fornavn
-                        reader.GetString(6)//efternavn
+                        reader.GetInt32(3),//lokale navn
+                        reader.GetString(4),//fornavn
+                        reader.GetString(5),//efternavn
+                        reader.GetString(2),//behandling
+                        reader.GetInt32(7)//Længde
                         ));
-                        */
+                }
             }
             conn.Close();
             return res;
+        }
+        public static void NyReservation(Reservation reservation,Behandling behandling, int special)
+        {
+            SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
+            SqlCommand Command = new SqlCommand();
+            Command.Connection = conn;
+            Command.CommandText = "SPopretReservation";
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("@reservationsDato", reservation.startdato);
+            Command.Parameters.AddWithValue("@reservationstid", reservation.starttid);
+            Command.Parameters.AddWithValue("@lokaleID", reservation.lokaleid);
+            Command.Parameters.AddWithValue("@behandlingsID", behandling.BehandlingsID);
+            Command.Parameters.AddWithValue("@reservationslængde", reservation.længde);
+            Command.Parameters.AddWithValue("@special", special);
+            conn.Open();
+            Command.ExecuteNonQuery();
+            conn.Close();
+        }
+        public static List<Behandling> HentPatientBehandlinger(Patient patient)
+        {
+            List<Behandling> Behandlinger = new List<Behandling>();
+            SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
+            SqlCommand Command = new SqlCommand();
+            Command.Connection = conn;
+            Command.CommandText = "SPseAllePatientBehandlinger";
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("@patientID", patient.patientid);
+            conn.Open();
+            using (SqlDataReader reader = Command.ExecuteReader())
+            {
+                while (reader.Read())
+                    Behandlinger.Add(new Behandling(
+                        reader.GetInt32(0),//BehandlingsID
+                        reader.GetString(1)//Beskrivelse
+                        ));
+            }
+            conn.Close();
+            return Behandlinger;
+        }
+        public static void OpretBehandling(Patient patient,string behandling)
+        {
+            SqlConnection conn = new SqlConnection(Program.SQLforbindelse);
+            SqlCommand Command = new SqlCommand();
+            Command.Connection = conn;
+            Command.CommandText = "SPOpretBehandling";
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("@patientID", patient.patientid);
+            Command.Parameters.AddWithValue("@beskrivelse", behandling);
+            conn.Open();
+            Command.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

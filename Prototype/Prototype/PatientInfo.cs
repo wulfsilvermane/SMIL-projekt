@@ -8,35 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Microsoft.VisualBasic;
 
 namespace Prototype
 {
     public partial class PatientInfo : Form
     {
-        private Patient patient;
+        public Patient patient;
         private bool opretNyPatient; // flag til at indikere om der skal oprettes ny patient
-
+        private List<Behandling> behandlinger;
         public PatientInfo()
         {
             opretNyPatient = false;
             InitializeComponent();
         }
 
-        public bool FindesCpr(string cpr)
-        {
-            bool findes;
-            // Pre-condition: CPR nummeret må ikke have mellemrum eller specialtegn, som bindestreg
-            // OK:      "1212851234"
-            // Ikke OK: "12 12 85 1234"
-            //          "121285-1234"     osv.
-
-            // TODO: Indsæt kode her, som kigger op på databasen
-            // Hvis den findes, skal der returneres 'true', ellers skal den returnere 'false'
-            findes = true; // PLACEHOLDER
-
-            return findes;
-        }
-
+        
         public void GenopfriskData()
         {
             Patient buffer = SQLkommandoer.FindPatient(patient.cprnummer);
@@ -177,6 +164,8 @@ namespace Prototype
                 txtPatientId.Text = patient.patientid.ToString();
                 txtBemærkninger.Text = patient.bemærkninger;
                 txtCprNummer.Text = patient.cprnummer;
+                behandlinger = SQLkommandoer.HentPatientBehandlinger(patient);
+                listBox1.DataSource = behandlinger;
             }
 
             // Når alt er klar, så enabler vi checkboksen.
@@ -297,10 +286,28 @@ namespace Prototype
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonOpretReservation_Click(object sender, EventArgs e)
         {
-            Reservering rf = new Reservering(patient);
+            Reservering rf = new Reservering(patient,behandlinger[listBox1.SelectedIndex]);
             rf.Show();
+        }
+
+        private void buttonFindBehandlinger_Click(object sender, EventArgs e)
+        {
+            behandlinger = SQLkommandoer.HentPatientBehandlinger(patient);
+            listBox1.DataSource = behandlinger;
+        }
+
+        private void buttonOpretBehandling_Click(object sender, EventArgs e)
+        {
+            SQLkommandoer.OpretBehandling(patient, textBehandlingtekst.Text);
+            /*OpretBehandling rf = new OpretBehandling();
+            rf.Show();*/
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buttonOpretReservation.Enabled = true;
         }
     }
 }
